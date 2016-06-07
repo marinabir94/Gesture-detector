@@ -319,17 +319,28 @@ namespace Microsoft.Samples.Kinect.ContinuousGestureBasics
                 this.goFar = false;
                 this.keepLevelZoom = false;
                 this.zoomProgress = -1.0f;
+                this.UpButton = false;
+                this.DownButton = false;
+                this.MiddleButton = false;
             }
             else
             {
-                this.TurnLeft = left;
-                this.TurnRight = right;
-                this.KeepStraight = straight;
-                this.SteerProgress = progress;
+                this.goUp = up;
+                this.goDown = down;
+                this.keepLevel = straightScroll;
+                this.scrollProgress = progressScroll;
+                this.goClose = close;
+                this.goFar = far;
+                this.keepLevelZoom = straightZoom;
+                this.zoomProgress = progressZoom;
+                this.UpButton = upPoint;
+                this.DownButton = downPoint;
+                this.MiddleButton = middlePoint;
+
             }
 
             // move the ship in space, using the latest gesture detection results
-            this.spaceView.UpdateShipPosition(this.KeepStraight, this.SteerProgress);
+            this.spaceView.UpdateShipPosition (this.KeepLevelZoom, this.KeepLevel, this.ScrollProgress, this.ZoomProgress);
         }
     }
 }

@@ -84,7 +84,7 @@ namespace Microsoft.Samples.Kinect.ContinuousGestureBasics
             this.spaceView = new SpaceView(this.spaceGrid, this.spaceImage);
 
             // initialize the GestureDetector object
-            this.gestureResultView = new GestureResultView(false, false, false, false, -1.0f, this.spaceView);
+            this.gestureResultView = new GestureResultView(false, false, false, false, false, false, false, false, false, false, -1.0f, -1.0f, this.spaceView);
             this.gestureDetector = new GestureDetector(this.kinectSensor, this.gestureResultView);
 
             // set data context objects for display in UI
@@ -311,24 +311,14 @@ namespace Microsoft.Samples.Kinect.ContinuousGestureBasics
                 {
                     // the active body is not tracked, pause the detector and update the UI
                     this.gestureDetector.IsPaused = true;
-                    this.gestureDetector.ClosedHandState = false;
-                    this.gestureResultView.UpdateGestureResult(false, false, false, false, -1.0f);
+    
+                    this.gestureResultView.UpdateGestureResult(false, false, false, false,-1.0f, false, false, false, -1.0f, false, false, false)
                 }
                 else
                 {
                     // the active body is tracked, unpause the detector
                     this.gestureDetector.IsPaused = false;
                     
-                    // steering gestures are only valid when the active body's hand state is 'closed'
-                    // update the detector with the latest hand state
-                    if (activeBody.HandLeftState == HandState.Closed || activeBody.HandRightState == HandState.Closed)
-                    {
-                        this.gestureDetector.ClosedHandState = true;
-                    }
-                    else
-                    {
-                        this.gestureDetector.ClosedHandState = false;
-                    }
                     
                     // get the latest gesture frame from the sensor and updates the UI with the results
                     this.gestureDetector.UpdateGestureData();
