@@ -307,12 +307,12 @@ namespace Microsoft.Samples.Kinect.ContinuousGestureBasics
                     this.gestureDetector.TrackingId = activeBody.TrackingId;
                 }
 
-                if (this.gestureDetector.TrackingId == 0)
+                else if (this.gestureDetector.TrackingId == 0)
                 {
                     // the active body is not tracked, pause the detector and update the UI
                     this.gestureDetector.IsPaused = true;
-    
-                    this.gestureResultView.UpdateGestureResult(false, false, false, false,-1.0f, false, false, false, -1.0f, false, false, false)
+
+                    this.gestureResultView.UpdateGestureResult(false, false, false, false, -1.0f, false, false, false, -1.0f, false, false, false);
                 }
                 else
                 {

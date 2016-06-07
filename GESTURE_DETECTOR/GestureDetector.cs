@@ -60,6 +60,12 @@ namespace Microsoft.Samples.Kinect.ContinuousGestureBasics
         /// <summary> Name of the discrete gesture in the database for detecting when the user is holding the wheel straight </summary>
         private readonly string pointMiddleGestureName = "PointMiddle";
 
+        /// <summary> Name of the discrete gesture in the database for detecting when the user is actively scrolling down the map </summary>
+        private readonly string keepLevelGestureName = "keepLevel";
+
+        /// <summary> Name of the discrete gesture in the database for detecting when the user is actively scrolling down the map </summary>
+        private readonly string keepLevelZoomGestureName = "keepLevelZoom";
+
         /// <summary> Gesture frame source which should be tied to a body tracking ID </summary>
         private VisualGestureBuilderFrameSource vgbFrameSource = null;
 
@@ -84,7 +90,7 @@ namespace Microsoft.Samples.Kinect.ContinuousGestureBasics
             }
             
             this.GestureResultView = gestureResultView;
-            this.ClosedHandState = false;
+    
             
             // create the vgb source. The associated body tracking ID will be set when a valid body frame arrives from the sensor.
             this.vgbFrameSource = new VisualGestureBuilderFrameSource(kinectSensor, 0);
@@ -248,6 +254,7 @@ namespace Microsoft.Samples.Kinect.ContinuousGestureBasics
                                     ContinuousGestureResult result = null;
                                     continuousResults.TryGetValue(gesture, out result);
 
+                                   
                                     if (result != null)
                                     {
                                         scrollProgress = result.Progress;
@@ -271,39 +278,100 @@ namespace Microsoft.Samples.Kinect.ContinuousGestureBasics
                         }
 
                         // if either the 'Steer_Left' or 'MaxTurn_Left' gesture is detected, then we want to turn the ship left
-                        if (steerLeft || maxTurnLeft)
+                        if (scrollUp || maxUp)
                         {
-                            steerLeft = true;
-                            keepStraight = false;
+                            scrollUp = true;
+                            scrollDown = false;
+                            keepLevel = false;
+                            keepLevelZoom = true;
+
                         }
 
                         // if either the 'Steer_Right' or 'MaxTurn_Right' gesture is detected, then we want to turn the ship right
-                        if (steerRight || maxTurnRight)
+                        if (scrollDown || maxDown)
                         {
-                            steerRight = true;
-                            keepStraight = false;
+                            scrollDown = true;
+                            scrollUp = false;
+                            keepLevel = false;
+                            keepLevelZoom = true;
+                        }
+
+                        if (upButton)
+                        {
+                            upButton = true;
+                            keepLevel = true;
+                            keepLevelZoom = true;
+
+                        }
+
+                        if( downButton)
+                        {
+                            downButton = true;
+                            keepLevel = true;
+                            keepLevelZoom = true;
+                        }
+
+                        if (middleButton)
+                        {
+                            middleButton = true;
+                            keepLevel = true;
+                            keepLevelZoom = true;
+                        }
+
+                        if (zoomIn)
+                        {
+                            zoomIn = true;
+                            zoomOut = false;
+                            keepLevelZoom = false;
+                            keepLevel = true;
+
+                        }
+
+                        if(zoomOut)
+                        {
+                            zoomIn = false;
+                            zoomOut = true;
+                            keepLevelZoom = false;
+                            keepLevel = true;
+                        }
+
+
+
+                        // clamp the progress value between 0 and 1
+                        if (scrollProgress < 0)
+                        {
+                            scrollProgress = 0;
+                        }
+                        else if (scrollProgress > 1)
+                        {
+                            scrollProgress = 1;
                         }
 
                         // clamp the progress value between 0 and 1
-                        if (steerProgress < 0)
+                        if (zoomProgress < 0)
                         {
-                            steerProgress = 0;
+                            zoomProgress = 0;
                         }
-                        else if (steerProgress > 1)
+                        else if (zoomProgress > 1)
                         {
-                            steerProgress = 1;
+                            zoomProgress = 1;
                         }
 
                         // Continuous gestures will always report a value while the body is tracked. 
                         // We need to provide context to this value by mapping it to one or more discrete gestures.
                         // For this sample, we will ignore the progress value whenever the user is not performing any of the discrete gestures.
-                        if (!steerLeft && !steerRight && !keepStraight)
+                        if (!zoomIn && !zoomOut)
                         {
-                            steerProgress = -1;
+                            zoomProgress = -1;
+                        }
+
+                        if (!scrollUp && !scrollDown)
+                        {
+                            scrollProgress = -1;
                         }
 
                         // update the UI with the latest gesture detection results
-                        this.GestureResultView.UpdateGestureResult(true, steerLeft, steerRight, keepStraight, steerProgress);
+                        this.GestureResultView.UpdateGestureResult(true, scrollUp, scrollDown, keepLevel,  scrollProgress,  zoomIn,  zoomOut,  keepLevelZoom,  zoomProgress,  upButton, downButton, middleButton);
                     }
                 }
             }

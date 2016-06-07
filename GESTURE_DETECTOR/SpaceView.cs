@@ -240,32 +240,34 @@ namespace Microsoft.Samples.Kinect.ContinuousGestureBasics
         /// <summary>
         /// Uses the continuous gesture 'SteerProgress' result to rotate and translate the ship in the UI
         /// </summary>
-        /// <param name="keepStraight"> True, if the ship should move forward without rotation; false otherwise</param>
-        /// <param name="progress"> Continuous gesture progress value which indicates how far the wheel should be turned left or right </param>
-        public void UpdateShipPosition(bool keepStraight, float progress)
+        /// <param name="keepLevel"> True, if the ship should move forward without rotation; false otherwise</param>
+        /// <param name="keepLevelZoom"> True, if the ship should move forward without rotation; false otherwise</param>
+        /// <param name="progressZoom"> Continuous gesture progress value which indicates how far the wheel should be turned left or right </param>
+        /// <param name="progressScroll"> Continuous gesture progress value which indicates how far the wheel should be turned left or right </param>
+        public void UpdateShipPosition(bool keepLevel, bool keepLevelZoom, float progressZoom, float progressScroll)
         {
             // the user is turning the wheel, apply rotation to the ship image
-            if (!keepStraight)
+            if (!keepLevel || !keepLevelZoom)
             {
                 double angle = 0;
 
                 // turn left
-                if (progress >= 0 && progress < 0.5)
+                if (progressScroll >= 0 && progressScroll < 0.5)
                 {
-                    angle = (0.5 - progress) * 10;
+                    angle = (0.5 - progressScroll) * 10;
                     this.ship.Rotation.Angle -= angle;
                 }
 
                 // turn right
-                if (progress > 0.5 && progress <= 1)
+                if (progressScroll > 0.5 && progressScroll <= 1)
                 {
-                    angle = (progress - 0.5) * 10;
+                    angle = (progressScroll - 0.5) * 10;
                     this.ship.Rotation.Angle += angle;
                 }
             }
 
             // the user is holding the wheel, calculate a new position for the ship to move to
-            if (progress >= 0)
+            if (progressScroll >= 0)
             {
                 this.ship.UpdatePosition(this.space, false);
             }
