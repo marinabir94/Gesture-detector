@@ -74,7 +74,7 @@ namespace Microsoft.Samples.Kinect.ContinuousGestureBasics
         /// <param name="downPoint">True, if the 'Steer_Right' gesture is currently detected</param>
         /// <param name="middlePoint">True, if the 'PointMiddle' gesture is currently detected</param>
         /// <param name="space">SpaceView object in UI which should be updated with latest gesture result data</param>
-        public GestureResultView (bool isTracked, bool up, bool down, bool straightScroll, bool close, bool far, bool straightZoom, bool upPoint, bool downPoint, bool middlePoint, float progressScroll, float progressZoom, SpaceView space)
+        public GestureResultView(bool isTracked, bool up, bool down, bool straightScroll, bool close, bool far, bool straightZoom, bool upPoint, bool downPoint, bool middlePoint, float progressScroll, float progressZoom, SpaceView space)
         {
             if (space == null)
             {
@@ -340,7 +340,7 @@ namespace Microsoft.Samples.Kinect.ContinuousGestureBasics
             }
 
             // move the ship in space, using the latest gesture detection results
-            this.spaceView.UpdateShipPosition (this.KeepLevelZoom, this.KeepLevel, this.ScrollProgress, this.ZoomProgress);
+            this.spaceView.UpdateShipPosition(this.KeepLevelZoom, this.KeepLevel, this.ScrollProgress, this.ZoomProgress);
         }
     }
 }

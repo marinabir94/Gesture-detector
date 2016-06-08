@@ -29,7 +29,7 @@ namespace Microsoft.Samples.Kinect.ContinuousGestureBasics
     {
         /// <summary> Active Kinect sensor </summary>
         private KinectSensor kinectSensor = null;
-        
+
         /// <summary> Array for the bodies (Kinect can track up to 6 people simultaneously) </summary>
         private Body[] bodies = null;
 
@@ -44,7 +44,7 @@ namespace Microsoft.Samples.Kinect.ContinuousGestureBasics
 
         /// <summary> KinectBodyView object which handles drawing the active body to a view box in the UI </summary>
         private KinectBodyView kinectBodyView = null;
-        
+
         /// <summary> Gesture detector which will be tied to the active body (closest skeleton to the sensor) </summary>
         private GestureDetector gestureDetector = null;
 
@@ -79,7 +79,7 @@ namespace Microsoft.Samples.Kinect.ContinuousGestureBasics
 
             // initialize the BodyViewer object for displaying tracked bodies in the UI
             this.kinectBodyView = new KinectBodyView(this.kinectSensor);
-            
+
             // initialize the SpaceView object
             this.spaceView = new SpaceView(this.spaceGrid, this.spaceImage);
 
@@ -154,7 +154,8 @@ namespace Microsoft.Samples.Kinect.ContinuousGestureBasics
         {
             this.UpdateKinectStatusText();
             this.UpdateKinectFrameData();
-
+        }
+/*
             if (!this.spaceView.ExplosionInProgress)
             {
                 if (this.bodies != null)
@@ -173,11 +174,13 @@ namespace Microsoft.Samples.Kinect.ContinuousGestureBasics
                     }
                 }
             }
+           
             else
             {
                 this.spaceView.UpdateExplosion();
             }
         }
+     */
 
         /// <summary>
         /// Starts the dispatcher timer to check for new Kinect frames and update objects in space @60fps
@@ -282,7 +285,7 @@ namespace Microsoft.Samples.Kinect.ContinuousGestureBasics
                     {
                         // we lost tracking of the active body, so update to the first tracked body in the array
                         int bodyIndex = this.GetActiveBodyIndex();
-                        
+
                         if (bodyIndex > 0)
                         {
                             this.activeBodyIndex = bodyIndex;
@@ -318,8 +321,8 @@ namespace Microsoft.Samples.Kinect.ContinuousGestureBasics
                 {
                     // the active body is tracked, unpause the detector
                     this.gestureDetector.IsPaused = false;
-                    
-                    
+
+
                     // get the latest gesture frame from the sensor and updates the UI with the results
                     this.gestureDetector.UpdateGestureData();
                 }

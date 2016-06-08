@@ -97,7 +97,7 @@ namespace Microsoft.Samples.Kinect.ContinuousGestureBasics
 
             this.space = spaceImage;
             this.rand = new Random();
-            this.ExplosionInProgress = false;
+            //this.ExplosionInProgress = false;
 
             // create our asteroid objects
             this.asteroids = new MovingSpaceImage[AsteroidCount];
@@ -119,12 +119,12 @@ namespace Microsoft.Samples.Kinect.ContinuousGestureBasics
             this.explosion = new MovingSpaceImage(this.explosionImageSource, 20, 20, 0);
             spaceGrid.Children.Add(this.explosion.Image);
             this.explosion.Image.Visibility = Visibility.Hidden;
-            
+
             // create our stopwatch timers
-            this.explosionTimer = new Stopwatch();            
+            this.explosionTimer = new Stopwatch();
             this.collisionSpanTimer = new Stopwatch();
         }
-
+        /*
         /// <summary> 
         /// Gets or sets a value indicating whether an explosion is in progress.
         /// If so, we need to wait for rendering to complete before resetting the moving space objects 
@@ -162,7 +162,7 @@ namespace Microsoft.Samples.Kinect.ContinuousGestureBasics
                 this.SetProperty(ref this.collisionCount, value);
             }
         }
-        
+
         /// <summary>
         /// Checks for collisions between the ship and asteroids
         /// If a collision is detected, creates an explosion and resets the space objects when the explosion is complete
@@ -231,12 +231,12 @@ namespace Microsoft.Samples.Kinect.ContinuousGestureBasics
                 this.ExplosionInProgress = false;
                 this.explosionTimer.Reset();
                 this.collisionSpanTimer.Reset();
-                
+
                 // reset space objects to starting position when explosion is over
                 this.ResetMovingSpaceImages();
             }
         }
-
+*/
         /// <summary>
         /// Uses the continuous gesture 'SteerProgress' result to rotate and translate the ship in the UI
         /// </summary>
@@ -277,7 +277,7 @@ namespace Microsoft.Samples.Kinect.ContinuousGestureBasics
         /// Updates the time since last explosion for display in UI
         /// </summary>
         /// <param name="pauseTimer">True, if there are no bodies tracked and the timer should be paused</param>
-        public void UpdateTimeSinceCollision(bool pauseTimer)
+       /* public void UpdateTimeSinceCollision(bool pauseTimer)
         {
             this.TimeSinceCollision = this.collisionSpanTimer.Elapsed;
 
@@ -291,6 +291,7 @@ namespace Microsoft.Samples.Kinect.ContinuousGestureBasics
                 this.collisionSpanTimer.Start();
             }
         }
+        */
 
         /// <summary>
         /// Resets ship, asteroids, and explosion to new starting positions

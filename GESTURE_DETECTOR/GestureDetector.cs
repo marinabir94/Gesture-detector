@@ -19,7 +19,7 @@ namespace Microsoft.Samples.Kinect.ContinuousGestureBasics
     {
 
         /// <summary> Path to the gesture database that was trained with VGB </summary>
-        private readonly string gestureDatabase = @"C:\Users\Gesture\Desktop\KINECTv2\ContiDiscrGestureBasics\GESTURE_DETECTOR\GESTURE_DETECTOR\Database\GESTURE_DETECTOR_VBG.gbd";
+        private readonly string gestureDatabase = @"C:\Users\Gesture\Desktop\KINECTv2\ContiDiscrGestureBasics\GESTURE_DETECTOR\GESTURE_DETECTOR\Database\GESTURE_DETECTOR_VGB.gbd";
       
         /// <summary> Name of the discrete gesture in the database for detecting when the user is holding the maximum up turn position </summary>
         private readonly string maxUpGestureName = "Max_Up";
@@ -60,12 +60,7 @@ namespace Microsoft.Samples.Kinect.ContinuousGestureBasics
         /// <summary> Name of the discrete gesture in the database for detecting when the user is holding the wheel straight </summary>
         private readonly string pointMiddleGestureName = "PointMiddle";
 
-        /// <summary> Name of the discrete gesture in the database for detecting when the user is actively scrolling down the map </summary>
-        private readonly string keepLevelGestureName = "keepLevel";
-
-        /// <summary> Name of the discrete gesture in the database for detecting when the user is actively scrolling down the map </summary>
-        private readonly string keepLevelZoomGestureName = "keepLevelZoom";
-
+        
         /// <summary> Gesture frame source which should be tied to a body tracking ID </summary>
         private VisualGestureBuilderFrameSource vgbFrameSource = null;
 
