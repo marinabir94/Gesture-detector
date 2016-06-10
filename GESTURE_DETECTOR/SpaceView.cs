@@ -240,14 +240,14 @@ namespace Microsoft.Samples.Kinect.ContinuousGestureBasics
         /// <summary>
         /// Uses the continuous gesture 'SteerProgress' result to rotate and translate the ship in the UI
         /// </summary>
-        /// <param name="keepLevel"> True, if the ship should move forward without rotation; false otherwise</param>
-        /// <param name="keepLevelZoom"> True, if the ship should move forward without rotation; false otherwise</param>
-        /// <param name="progressZoom"> Continuous gesture progress value which indicates how far the wheel should be turned left or right </param>
+        /// <param name="turningleft"> True, if the ship should move forward without rotation; false otherwise</param>
+        /// <param name="turningright"> True, if the ship should move forward without rotation; false otherwise</param>
+        /// <param name="keepForward"> True, if the ship should move forward without rotation; false otherwise</param>
         /// <param name="progressScroll"> Continuous gesture progress value which indicates how far the wheel should be turned left or right </param>
-        public void UpdateShipPosition(bool keepLevel, bool keepLevelZoom, float progressZoom, float progressScroll)
+        public void UpdateShipPosition (bool turningright, bool turningleft, bool keepForward, float progressScroll)
         {
             // the user is turning the wheel, apply rotation to the ship image
-            if (!keepLevel || !keepLevelZoom)
+            if (!turningleft || !turningright)
             {
                 double angle = 0;
 
@@ -264,38 +264,39 @@ namespace Microsoft.Samples.Kinect.ContinuousGestureBasics
                     angle = (progressScroll - 0.5) * 10;
                     this.ship.Rotation.Angle += angle;
                 }
+
+                // the user is holding the wheel, calculate a new position for the ship to move to
+                if (progressScroll >= 0 || keepForward  )
+                {
+                    this.ship.UpdatePosition(this.space, false);
+                }
             }
 
-            // the user is holding the wheel, calculate a new position for the ship to move to
-            if (progressScroll >= 0)
-            {
-                this.ship.UpdatePosition(this.space, false);
-            }
         }
 
         /// <summary>
         /// Updates the time since last explosion for display in UI
         /// </summary>
         /// <param name="pauseTimer">True, if there are no bodies tracked and the timer should be paused</param>
-       /* public void UpdateTimeSinceCollision(bool pauseTimer)
-        {
-            this.TimeSinceCollision = this.collisionSpanTimer.Elapsed;
+            /* public void UpdateTimeSinceCollision(bool pauseTimer)
+             {
+                 this.TimeSinceCollision = this.collisionSpanTimer.Elapsed;
 
-            if (this.collisionSpanTimer.IsRunning && pauseTimer)
-            {
-                this.collisionSpanTimer.Stop();
-            }
-            else if (!this.collisionSpanTimer.IsRunning && !pauseTimer)
-            {
-                this.TimeSinceCollision = TimeSpan.FromSeconds(0);
-                this.collisionSpanTimer.Start();
-            }
-        }
-        */
+                 if (this.collisionSpanTimer.IsRunning && pauseTimer)
+                 {
+                     this.collisionSpanTimer.Stop();
+                 }
+                 else if (!this.collisionSpanTimer.IsRunning && !pauseTimer)
+                 {
+                     this.TimeSinceCollision = TimeSpan.FromSeconds(0);
+                     this.collisionSpanTimer.Start();
+                 }
+             }
+             */
 
-        /// <summary>
-        /// Resets ship, asteroids, and explosion to new starting positions
-        /// </summary>
+            /// <summary>
+            /// Resets ship, asteroids, and explosion to new starting positions
+            /// </summary>
         private void ResetMovingSpaceImages()
         {
             // hide the explosion and reset to center

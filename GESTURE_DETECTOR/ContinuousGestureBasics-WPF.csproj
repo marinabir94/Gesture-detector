@@ -65,6 +65,14 @@
     <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Bespoke.Common, Version=1.0.6005.21320, Culture=neutral, PublicKeyToken=843a094264521388, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\Bespoke.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Bespoke.Common.Osc, Version=5.0.6005.21321, Culture=neutral, PublicKeyToken=843a094264521388, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\Bespoke.Common.Osc.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Kinect">
       <HintPath>$(KINECTSDK20_DIR)Assemblies\Microsoft.Kinect.dll</HintPath>
     </Reference>
@@ -132,6 +140,8 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <Content Include="Bespoke.Common.dll" />
+    <Content Include="Bespoke.Common.Osc.dll" />
     <Content Include="Database\Steering.gbd">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

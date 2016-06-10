@@ -6,7 +6,7 @@
         Height="680" Width="790"
         Loaded="MainWindow_Loaded"
         Closing="MainWindow_Closing">
-    
+
     <Window.Resources>
         <SolidColorBrush x:Key="MediumGreyBrush" Color="#ff6e6e6e" />
         <SolidColorBrush x:Key="KinectPurpleBrush" Color="#ff52318f" />
@@ -63,7 +63,7 @@
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
-                <TextBlock Text="Gesture Results" FontSize="20" FontFamily="Segoe UI" FontWeight="SemiBold" Foreground="{StaticResource KinectPurpleBrush}" Grid.Row="0" Margin="5"/>
+                
                 <TextBlock Text="{Binding TurnLeft, StringFormat='Turn Left: {0}'}" FontSize="18" FontFamily="Segoe UI" FontWeight="SemiBold" Grid.Row="1" Margin="5"/>
                 <TextBlock Text="{Binding TurnRight, StringFormat='Turn Right: {0}'}" FontSize="18" FontFamily="Segoe UI" FontWeight="SemiBold" Grid.Row="2" Margin="5"/>
                 <TextBlock Text="{Binding KeepStraight, StringFormat='Keep Straight: {0}'}" FontSize="18" FontFamily="Segoe UI" FontWeight="SemiBold" Grid.Row="3" Margin="5"/>
@@ -84,7 +84,7 @@
             <Grid x:Name="spaceGrid" Grid.Column="1" Grid.RowSpan="3" Margin="5" ClipToBounds="True">
                 <Image x:Name="spaceImage" Source="Images\space.png" Stretch="UniformToFill" ClipToBounds="True"/>
             </Grid>
-            
+
         </Grid>
 
         <StatusBar Grid.Row="2" HorizontalAlignment="Stretch" Name="statusBar" VerticalAlignment="Bottom" Background="White" Foreground="{StaticResource KinectBlueBrush}">

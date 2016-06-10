@@ -340,7 +340,7 @@ namespace Microsoft.Samples.Kinect.ContinuousGestureBasics
             }
 
             // move the ship in space, using the latest gesture detection results
-            this.spaceView.UpdateShipPosition(this.KeepLevelZoom, this.KeepLevel, this.ScrollProgress, this.ZoomProgress);
+            this.spaceView.UpdateShipPosition(this.GoUp, this.GoDown, this.MiddleButton, this.ScrollProgress);
         }
     }
 }

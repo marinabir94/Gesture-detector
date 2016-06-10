@@ -10,17 +10,29 @@ namespace Microsoft.Samples.Kinect.ContinuousGestureBasics
     using System.Collections.Generic;
     using Microsoft.Kinect;
     using Microsoft.Kinect.VisualGestureBuilder;
+    using System.Net;
+    using Bespoke.Common.Osc;
+
+
+
+
+
 
     /// <summary>
     /// Gesture Detector class which polls for VisualGestureBuilderFrames from the Kinect sensor
     /// Updates the associated GestureResultView object with the latest gesture results
     /// </summary>
     public sealed class GestureDetector : IDisposable
-    {
 
+    {
+        IPEndPoint myDetector = new IPEndPoint(IPAddress.Loopback, 7001);
+        IPEndPoint vizArtist = new IPEndPoint(IPAddress.Loopback, 8000);
+
+
+        
         /// <summary> Path to the gesture database that was trained with VGB </summary>
         private readonly string gestureDatabase = @"C:\Users\Gesture\Desktop\KINECTv2\ContiDiscrGestureBasics\GESTURE_DETECTOR\GESTURE_DETECTOR\Database\GESTURE_DETECTOR_VGB.gbd";
-      
+
         /// <summary> Name of the discrete gesture in the database for detecting when the user is holding the maximum up turn position </summary>
         private readonly string maxUpGestureName = "Max_Up";
 
@@ -60,7 +72,7 @@ namespace Microsoft.Samples.Kinect.ContinuousGestureBasics
         /// <summary> Name of the discrete gesture in the database for detecting when the user is holding the wheel straight </summary>
         private readonly string pointMiddleGestureName = "PointMiddle";
 
-        
+
         /// <summary> Gesture frame source which should be tied to a body tracking ID </summary>
         private VisualGestureBuilderFrameSource vgbFrameSource = null;
 
@@ -83,10 +95,10 @@ namespace Microsoft.Samples.Kinect.ContinuousGestureBasics
             {
                 throw new ArgumentNullException("gestureResultView");
             }
-            
+
             this.GestureResultView = gestureResultView;
-    
-            
+
+
             // create the vgb source. The associated body tracking ID will be set when a valid body frame arrives from the sensor.
             this.vgbFrameSource = new VisualGestureBuilderFrameSource(kinectSensor, 0);
 
@@ -103,7 +115,7 @@ namespace Microsoft.Samples.Kinect.ContinuousGestureBasics
                 this.vgbFrameSource.AddGestures(database.AvailableGestures);
             }
 
-            
+
         }
 
         /// <summary> 
@@ -196,48 +208,95 @@ namespace Microsoft.Samples.Kinect.ContinuousGestureBasics
                                     if (gesture.Name.Equals(this.scrollUpGestureName))
                                     {
                                         scrollUp = result.Detected;
+
+                                        OscMessage OSCmessageScrollUp = new OscMessage(myDetector, "Scrolling Up", 10.0f);
+
+                                        OSCmessageScrollUp.Send(vizArtist);
+
                                     }
                                     else if (gesture.Name.Equals(this.scrollDownGestureName))
                                     {
                                         scrollDown = result.Detected;
+
+                                        OscMessage OSCmessageScrollDown = new OscMessage(myDetector, "Scrolling Down", 10.0f);
+
+                                        OSCmessageScrollDown.Send(vizArtist);
+
                                     }
                                     else if (gesture.Name.Equals(this.maxUpGestureName))
                                     {
                                         maxUp = result.Detected;
+
+                                        OscMessage OSCmessageMaxUp = new OscMessage(myDetector, "Max Up", 10.0f);
+
+                                        OSCmessageMaxUp.Send(vizArtist);
                                     }
                                     else if (gesture.Name.Equals(this.maxDownGestureName))
                                     {
                                         maxDown = result.Detected;
+
+                                        OscMessage OSCmessageMaxDown = new OscMessage(myDetector, "Max Down", 10.0f);
+
+                                        OSCmessageMaxDown.Send(vizArtist);
                                     }
 
                                     else if (gesture.Name.Equals(this.zoomInGestureName))
                                     {
                                         zoomIn = result.Detected;
+
+                                        OscMessage OSCmessageZoomIn = new OscMessage(myDetector, "Zooming In", 10.0f);
+
+                                        OSCmessageZoomIn.Send(vizArtist);
                                     }
                                     else if (gesture.Name.Equals(this.zoomOutGestureName))
                                     {
                                         zoomOut = result.Detected;
+
+                                        OscMessage OSCmessageZoomOut = new OscMessage(myDetector, "Zooming Out", 10.0f);
+
+                                        OSCmessageZoomOut.Send(vizArtist);
                                     }
                                     else if (gesture.Name.Equals(this.maxInGestureName))
                                     {
                                         maxIn = result.Detected;
+
+                                        OscMessage OSCmessageMaxIn = new OscMessage(myDetector, "Max In", 10.0f);
+
+                                        OSCmessageMaxIn.Send(vizArtist);
+
                                     }
                                     else if (gesture.Name.Equals(this.maxOutGestureName))
                                     {
                                         maxOut = result.Detected;
+
+                                        OscMessage OSCmessageMaxOut = new OscMessage(myDetector, "Max Out", 10.0f);
+
+                                        OSCmessageMaxOut.Send(vizArtist);
                                     }
 
                                     else if (gesture.Name.Equals(this.pointUpGestureName))
                                     {
                                         upButton = result.Detected;
+
+                                        OscMessage OSCmessagePointUp = new OscMessage(myDetector, "Pointing Up", 10.0f);
+
+                                        OSCmessagePointUp.Send(vizArtist);
                                     }
                                     else if (gesture.Name.Equals(this.pointDownGestureName))
                                     {
                                         downButton = result.Detected;
+
+                                        OscMessage OSCmessagePointDown = new OscMessage(myDetector, "Pointing Down", 10.0f);
+
+                                        OSCmessagePointDown.Send(vizArtist);
                                     }
                                     else if (gesture.Name.Equals(this.pointMiddleGestureName))
                                     {
                                         middleButton = result.Detected;
+
+                                        OscMessage OSCmessagePointMiddle = new OscMessage(myDetector, "Pointing Middle", 10.0f);
+
+                                        OSCmessagePointMiddle.Send(vizArtist);
                                     }
                                 }
                             }
@@ -283,7 +342,7 @@ namespace Microsoft.Samples.Kinect.ContinuousGestureBasics
                         }
 
                         // if either the 'Steer_Right' or 'MaxTurn_Right' gesture is detected, then we want to turn the ship right
-                        if (scrollDown || maxDown)
+                        if ((scrollDown) || maxDown)
                         {
                             scrollDown = true;
                             scrollUp = false;
@@ -291,28 +350,37 @@ namespace Microsoft.Samples.Kinect.ContinuousGestureBasics
                             keepLevelZoom = true;
                         }
 
+                        // if "Point_Up" is detected, then we want to go forwards.
                         if (upButton)
                         {
                             upButton = true;
+                            downButton = false;
+                            middleButton = true;
                             keepLevel = true;
                             keepLevelZoom = true;
 
                         }
 
+
+                        //If "Point_Down" is detected, then we want to go backwards.
                         if( downButton)
                         {
                             downButton = true;
+                            upButton = false;
+                            middleButton = false;
                             keepLevel = true;
                             keepLevelZoom = true;
                         }
 
+
+                        //If "Point_Middle" is detected, then we want to go stop.
                         if (middleButton)
                         {
                             middleButton = true;
                             keepLevel = true;
                             keepLevelZoom = true;
                         }
-
+/*
                         if (zoomIn)
                         {
                             zoomIn = true;
@@ -331,7 +399,7 @@ namespace Microsoft.Samples.Kinect.ContinuousGestureBasics
                         }
 
 
-
+*/
                         // clamp the progress value between 0 and 1
                         if (scrollProgress < 0)
                         {
@@ -391,3 +459,4 @@ namespace Microsoft.Samples.Kinect.ContinuousGestureBasics
         }
     }
 }
+
