@@ -95,7 +95,7 @@
                         <RotateTransform Angle="-0.225"/>
                         <TranslateTransform/>
                     </TransformGroup>
-                </TextBlock.RenderTransform><Run Text="Gestures that can be detected: Point up, Point to the middle, Point down, Scroll up, Scroll down, Zoom in and Zoom out. "/><LineBreak/><Run/><LineBreak/><Run Text="Stand in front of the camera and perform the previous gestures. "/><LineBreak/><Run/></TextBlock>
+                </TextBlock.RenderTransform><Run Text="Gestures that can be detected: Point up, Point to the middle, Point down, Scroll up, Scroll down, "/><Run Text="                      "/><Run Text="Zoom in and Zoom out. "/><LineBreak/><Run/><LineBreak/><Run Text="                                   "/><Run Text="Stand in front of the camera and perform the previous gestures. "/><LineBreak/><Run/></TextBlock>
 
         </Grid>
 

@@ -3,7 +3,7 @@
 //     Copyright (c) Microsoft Corporation.  All rights reserved.
 // </copyright>
 //------------------------------------------------------------------------------
-
+/*
 namespace Microsoft.Samples.Kinect.ContinuousGestureBasics
 {
     using System;
@@ -244,7 +244,7 @@ namespace Microsoft.Samples.Kinect.ContinuousGestureBasics
         /// <param name="turningright"> True, if the ship should move forward without rotation; false otherwise</param>
         /// <param name="keepForward"> True, if the ship should move forward without rotation; false otherwise</param>
         /// <param name="progressScroll"> Continuous gesture progress value which indicates how far the wheel should be turned left or right </param>
-        public void UpdateShipPosition (bool turningright, bool turningleft, bool keepForward, float progressScroll)
+/*        public void UpdateShipPosition (bool turningright, bool turningleft, bool keepForward, float progressScroll)
         {
             // the user is turning the wheel, apply rotation to the ship image
             if (!turningleft || !turningright)
@@ -297,7 +297,8 @@ namespace Microsoft.Samples.Kinect.ContinuousGestureBasics
             /// <summary>
             /// Resets ship, asteroids, and explosion to new starting positions
             /// </summary>
-        private void ResetMovingSpaceImages()
+            
+    /*    private void ResetMovingSpaceImages()
         {
             // hide the explosion and reset to center
             this.explosion.Image.Visibility = Visibility.Hidden;
@@ -321,3 +322,5 @@ namespace Microsoft.Samples.Kinect.ContinuousGestureBasics
         }
     }
 }
+
+*/

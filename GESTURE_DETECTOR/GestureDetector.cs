@@ -33,10 +33,10 @@ namespace Microsoft.Samples.Kinect.ContinuousGestureBasics
         /// <summary> Path to the gesture database that was trained with VGB </summary>
         private readonly string gestureDatabase = @"C:\Users\Gesture\Desktop\KINECTv2\ContiDiscrGestureBasics\GESTURE_DETECTOR\GESTURE_DETECTOR\Database\GESTURE_DETECTOR_VGB.gbd";
 
-        /// <summary> Name of the discrete gesture in the database for detecting when the user is holding the maximum up turn position </summary>
+        /// <summary> Name of the discrete gesture in the database for detecting when the user is scrolling up at the maximum level </summary>
         private readonly string maxUpGestureName = "Max_Up";
 
-        /// <summary> Name of the discrete gesture in the database for detecting when the user is holding the maximum down turn position </summary>
+        /// <summary> Name of the discrete gesture in the database for detecting when the user is scrolling up at the minimum level </summary>
         private readonly string maxDownGestureName = "Max_Down";
 
         /// <summary> Name of the discrete gesture in the database for detecting when the user is actively scrolling up the map </summary>
@@ -48,16 +48,16 @@ namespace Microsoft.Samples.Kinect.ContinuousGestureBasics
         /// <summary> Name of the continuous gesture in the database which tracks the scrolling up progress </summary>
         private readonly string scrollProgressGestureName = "ScrollProgress";
 
-        /// <summary> Name of the discrete gesture in the database for detecting when the user is holding the maximum up turn position </summary>
+        /// <summary> Name of the discrete gesture in the database for detecting when the user is zooming in at the maximum level </summary>
         private readonly string maxInGestureName = "Max_In";
 
-        /// <summary> Name of the discrete gesture in the database for detecting when the user is holding the maximum down turn position </summary>
+        /// <summary> Name of the discrete gesture in the database for detecting when the user is zooming up at the minimum level </summary>
         private readonly string maxOutGestureName = "Max_Out";
 
-        /// <summary> Name of the discrete gesture in the database for detecting when the user is actively scrolling up the map </summary>
+        /// <summary> Name of the discrete gesture in the database for detecting when the user is actively zooming in the map </summary>
         private readonly string zoomInGestureName = "Zoom_In";
 
-        /// <summary> Name of the discrete gesture in the database for detecting when the user is actively scrolling down the map </summary>
+        /// <summary> Name of the discrete gesture in the database for detecting when the user is actively zooming out the map </summary>
         private readonly string zoomOutGestureName = "Zoom_Out";
 
         /// <summary> Name of the continuous gesture in the database which tracks the scrolling up progress </summary>
