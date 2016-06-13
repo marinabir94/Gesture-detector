@@ -19,15 +19,13 @@
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-
-        <Image Grid.Row="0" Source="Images\Logo.png" HorizontalAlignment="Left" Stretch="Fill" Height="32" Width="81" Margin="0 10 0 5" />
-        <TextBlock Grid.Row="0" HorizontalAlignment="Right" Text="Continuous Gesture Basics" VerticalAlignment="Bottom" Margin="0 0 -1 0" Foreground="{StaticResource MediumGreyBrush}" FontFamily="Segoe UI" FontSize="18"/>
+        <TextBlock Grid.Row="0" HorizontalAlignment="Right" Text="Continuous Gesture Basics" VerticalAlignment="Bottom" Margin="0,0,31,5.2" Foreground="{StaticResource MediumGreyBrush}" FontFamily="Segoe UI" FontSize="18"/>
         <Image Grid.Row="0" Source="Images\Status.png" Stretch="None" HorizontalAlignment="Center" Margin="0 0 0 5" />
 
-        <Grid x:Name="contentGrid" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <Grid x:Name="contentGrid" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10,46,8,81" Grid.RowSpan="2">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="1*"/>
-                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="264*"/>
+                <ColumnDefinition Width="109*"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
@@ -36,14 +34,13 @@
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
 
-            <StackPanel Grid.Column="0" Grid.Row="0" Margin="5">
-                <TextBlock Text="Kinect Viewbox" FontSize="20" FontFamily="Segoe UI" Foreground="{StaticResource KinectPurpleBrush}" FontWeight="SemiBold" Grid.Row="0" Margin="5"/>
+            <StackPanel Grid.Column="0" Grid.Row="0" Margin="5,10,9.4,5">
                 <Viewbox x:Name="kinectBodyViewbox">
                     <Image Source="{Binding ImageSource}" Stretch="UniformToFill" />
                 </Viewbox>
             </StackPanel>
 
-            <Grid x:Name="gestureResultGrid" Grid.Column="0" Grid.Row="1" Width="Auto" Margin="5" VerticalAlignment="Top">
+            <Grid x:Name="gestureResultGrid" Grid.Column="0" Grid.Row="1" Width="Auto" Margin="5,5,9.4,0" VerticalAlignment="Top" Height="135" Grid.RowSpan="2">
                 <Grid.Style>
                     <Style TargetType="{x:Type Grid}">
                         <Style.Triggers>
@@ -63,14 +60,14 @@
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
-                
+
                 <TextBlock Text="{Binding TurnLeft, StringFormat='Turn Left: {0}'}" FontSize="18" FontFamily="Segoe UI" FontWeight="SemiBold" Grid.Row="1" Margin="5"/>
                 <TextBlock Text="{Binding TurnRight, StringFormat='Turn Right: {0}'}" FontSize="18" FontFamily="Segoe UI" FontWeight="SemiBold" Grid.Row="2" Margin="5"/>
                 <TextBlock Text="{Binding KeepStraight, StringFormat='Keep Straight: {0}'}" FontSize="18" FontFamily="Segoe UI" FontWeight="SemiBold" Grid.Row="3" Margin="5"/>
                 <TextBlock Text="{Binding SteerProgress, StringFormat='Steer Progress: {0}'}" FontSize="18" FontFamily="Segoe UI" FontWeight="SemiBold" Grid.Row="4" Margin="5"/>
             </Grid>
 
-            <Grid x:Name="collisionResultGrid" Grid.Column="0" Grid.Row="2" Margin="5" Background="Black" VerticalAlignment="Top">
+            <Grid x:Name="collisionResultGrid" Grid.Column="0" Grid.Row="2" Margin="5,5,9.4,0" Background="Black" VerticalAlignment="Top" Height="68">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
@@ -79,10 +76,18 @@
                 <TextBlock Text="{Binding TimeSinceCollision, StringFormat='Last Collision: {0:mm\\:ss\\.f}'}" FontSize="18" FontFamily="Segoe UI" Foreground="White" Grid.Row="1" Margin="5"/>
             </Grid>
 
-            <TextBlock Grid.ColumnSpan="2" Grid.Row="3" Text="Instructions: When your body appears in the Kinect Viewbox, you can control the ship. Pretend to hold a fake steering wheel in your hands. Turn the wheel left or right to rotate the ship. Open your hands to stop the ship." TextWrapping="Wrap" Margin="10" Foreground="{StaticResource MediumGreyBrush}" FontFamily="Segoe UI" FontSize="14"/>
+            <TextBlock Grid.ColumnSpan="2" Grid.Row="3" Text="Instructions: When your body appears in the Kinect Viewbox, you can control the ship. Pretend to hold a fake steering wheel in your hands. Turn the wheel left or right to rotate the ship. Open your hands to stop the ship." TextWrapping="Wrap" Margin="10,9.8,10.6,10" Foreground="{StaticResource MediumGreyBrush}" FontFamily="Segoe UI" FontSize="14"/>
 
-            <Grid x:Name="spaceGrid" Grid.Column="1" Grid.RowSpan="3" Margin="5" ClipToBounds="True">
-                <Image x:Name="spaceImage" Source="Images\space.png" Stretch="UniformToFill" ClipToBounds="True"/>
+            <Grid x:Name="spaceGrid" Grid.RowSpan="3" Margin="3.6,5,4.6,5.2" ClipToBounds="True" Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="90*"/>
+                    <ColumnDefinition Width="119*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="170*"/>
+                    <RowDefinition Height="351*"/>
+                </Grid.RowDefinitions>
+                <Image x:Name="spaceImage" Source="Images\space.png" Stretch="UniformToFill" ClipToBounds="True" Margin="10,10,-1.6,-0.4" Grid.RowSpan="2" Height="440" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
             </Grid>
 
         </Grid>
@@ -90,5 +95,6 @@
         <StatusBar Grid.Row="2" HorizontalAlignment="Stretch" Name="statusBar" VerticalAlignment="Bottom" Background="White" Foreground="{StaticResource KinectBlueBrush}">
             <StatusBarItem Content="{Binding StatusText}" />
         </StatusBar>
+        <TextBlock Text="Kinect Viewbox" FontSize="20" FontFamily="Segoe UI" Foreground="{StaticResource KinectPurpleBrush}" FontWeight="SemiBold" Margin="33,26,273,2.2"/>
     </Grid>
 </Window>

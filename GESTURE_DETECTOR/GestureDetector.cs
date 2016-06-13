@@ -209,94 +209,145 @@ namespace Microsoft.Samples.Kinect.ContinuousGestureBasics
                                     {
                                         scrollUp = result.Detected;
 
-                                        OscMessage OSCmessageScrollUp = new OscMessage(myDetector, "Scrolling Up", 10.0f);
 
-                                        OSCmessageScrollUp.Send(vizArtist);
+                                        if (scrollUp = result.Detected)
+                                        {
+
+                                            OscMessage OSCmessageScrollUp = new OscMessage(myDetector, "/ScrollUp", 1.0f);
+
+                                            OSCmessageScrollUp.Send(myDetector);
+                                        }
 
                                     }
                                     else if (gesture.Name.Equals(this.scrollDownGestureName))
                                     {
                                         scrollDown = result.Detected;
 
-                                        OscMessage OSCmessageScrollDown = new OscMessage(myDetector, "Scrolling Down", 10.0f);
+                                        if (scrollDown = result.Detected)
+                                        {
 
-                                        OSCmessageScrollDown.Send(vizArtist);
+                                            OscMessage OSCmessageScrollDown = new OscMessage(myDetector, "/ScrollDown", 1.0f);
+
+                                            OSCmessageScrollDown.Send(myDetector);
+                                        }
 
                                     }
                                     else if (gesture.Name.Equals(this.maxUpGestureName))
                                     {
                                         maxUp = result.Detected;
 
-                                        OscMessage OSCmessageMaxUp = new OscMessage(myDetector, "Max Up", 10.0f);
+                                        if (maxUp = result.Detected)
+                                        {
 
-                                        OSCmessageMaxUp.Send(vizArtist);
+                                            OscMessage OSCmessageMaxUp = new OscMessage(myDetector, "/MaxUp", 1.0f);
+
+                                            OSCmessageMaxUp.Send(myDetector);
+
+                                        }
                                     }
                                     else if (gesture.Name.Equals(this.maxDownGestureName))
                                     {
                                         maxDown = result.Detected;
 
-                                        OscMessage OSCmessageMaxDown = new OscMessage(myDetector, "Max Down", 10.0f);
+                                        if (maxDown = result.Detected)
+                                        {
 
-                                        OSCmessageMaxDown.Send(vizArtist);
+                                            OscMessage OSCmessageMaxDown = new OscMessage(myDetector, "/MaxDown", 1.0f);
+
+                                            OSCmessageMaxDown.Send(myDetector);
+
+                                        }
                                     }
 
                                     else if (gesture.Name.Equals(this.zoomInGestureName))
                                     {
                                         zoomIn = result.Detected;
 
-                                        OscMessage OSCmessageZoomIn = new OscMessage(myDetector, "Zooming In", 10.0f);
+                                        if (zoomIn = result.Detected)
+                                        {
 
-                                        OSCmessageZoomIn.Send(vizArtist);
+                                            OscMessage OSCmessageZoomIn = new OscMessage(myDetector, "/ZoomIn", 1.0f);
+
+                                            OSCmessageZoomIn.Send(myDetector);
+                                        }
                                     }
                                     else if (gesture.Name.Equals(this.zoomOutGestureName))
                                     {
                                         zoomOut = result.Detected;
 
-                                        OscMessage OSCmessageZoomOut = new OscMessage(myDetector, "Zooming Out", 10.0f);
+                                        if (zoomOut = result.Detected)
+                                        {
 
-                                        OSCmessageZoomOut.Send(vizArtist);
+                                            OscMessage OSCmessageZoomOut = new OscMessage(myDetector, "/ZoomOut", 1.0f);
+
+                                            OSCmessageZoomOut.Send(myDetector);
+
+                                        }
                                     }
                                     else if (gesture.Name.Equals(this.maxInGestureName))
                                     {
                                         maxIn = result.Detected;
 
-                                        OscMessage OSCmessageMaxIn = new OscMessage(myDetector, "Max In", 10.0f);
+                                        if (maxIn = result.Detected)
+                                        {
 
-                                        OSCmessageMaxIn.Send(vizArtist);
+                                            OscMessage OSCmessageMaxIn = new OscMessage(myDetector, "/MaxIn", 1.0f);
+
+                                            OSCmessageMaxIn.Send(myDetector);
+
+                                        }
 
                                     }
                                     else if (gesture.Name.Equals(this.maxOutGestureName))
                                     {
                                         maxOut = result.Detected;
 
-                                        OscMessage OSCmessageMaxOut = new OscMessage(myDetector, "Max Out", 10.0f);
+                                        if (maxOut = result.Detected)
+                                        {
 
-                                        OSCmessageMaxOut.Send(vizArtist);
+                                            OscMessage OSCmessageMaxOut = new OscMessage(myDetector, "/MaxOut", 1.0f);
+
+                                            OSCmessageMaxOut.Send(myDetector);
+
+                                        }
                                     }
 
                                     else if (gesture.Name.Equals(this.pointUpGestureName))
                                     {
                                         upButton = result.Detected;
 
-                                        OscMessage OSCmessagePointUp = new OscMessage(myDetector, "Pointing Up", 10.0f);
+                                        if (upButton = result.Detected)
+                                        {
 
-                                        OSCmessagePointUp.Send(vizArtist);
+                                            OscMessage OSCmessagePointUp = new OscMessage(myDetector, "/PointUp", 1.0f);
+
+                                            OSCmessagePointUp.Send(myDetector);
+
+                                        }
                                     }
                                     else if (gesture.Name.Equals(this.pointDownGestureName))
                                     {
                                         downButton = result.Detected;
 
-                                        OscMessage OSCmessagePointDown = new OscMessage(myDetector, "Pointing Down", 10.0f);
+                                        if (downButton = result.Detected)
+                                        {
 
-                                        OSCmessagePointDown.Send(vizArtist);
+                                            OscMessage OSCmessagePointDown = new OscMessage(myDetector, "/PointDown", 1.0f);
+
+                                            OSCmessagePointDown.Send(myDetector);
+                                        }
                                     }
                                     else if (gesture.Name.Equals(this.pointMiddleGestureName))
                                     {
                                         middleButton = result.Detected;
 
-                                        OscMessage OSCmessagePointMiddle = new OscMessage(myDetector, "Pointing Middle", 10.0f);
+                                        if (middleButton = result.Detected)
+                                        {
 
-                                        OSCmessagePointMiddle.Send(vizArtist);
+                                            OscMessage OSCmessagePointMiddle = new OscMessage(myDetector, "/PointMiddle", 1.0f);
+
+                                            OSCmessagePointMiddle.Send(myDetector);
+                                        }
                                     }
                                 }
                             }
@@ -311,7 +362,16 @@ namespace Microsoft.Samples.Kinect.ContinuousGestureBasics
                                    
                                     if (result != null)
                                     {
-                                        scrollProgress = result.Progress;
+                                       scrollProgress = result.Progress;
+
+                                        if (scrollUp || scrollDown)
+                                        {
+
+                                            OscMessage OSCmessagescrollProgress = new OscMessage(myDetector, "/ScrollProgress", scrollProgress);
+
+                                            OSCmessagescrollProgress.Send(myDetector);
+
+                                        }
                                     }
                                 }
 
@@ -323,6 +383,16 @@ namespace Microsoft.Samples.Kinect.ContinuousGestureBasics
                                     if (result != null)
                                     {
                                         zoomProgress = result.Progress;
+
+                                        if (zoomIn || zoomOut )
+                                        {
+
+                                            OscMessage OSCmessagezoomProgress = new OscMessage(myDetector, "/ZoomProgress", zoomProgress);
+
+                                            OSCmessagezoomProgress.Send(myDetector);
+
+                                        }
+                                         
                                     }
                                 }
 
@@ -330,7 +400,7 @@ namespace Microsoft.Samples.Kinect.ContinuousGestureBasics
 
                             }
                         }
-
+/*
                         // if either the 'Steer_Left' or 'MaxTurn_Left' gesture is detected, then we want to turn the ship left
                         if (scrollUp || maxUp)
                         {
@@ -380,7 +450,7 @@ namespace Microsoft.Samples.Kinect.ContinuousGestureBasics
                             keepLevel = true;
                             keepLevelZoom = true;
                         }
-/*
+//
                         if (zoomIn)
                         {
                             zoomIn = true;
@@ -400,6 +470,7 @@ namespace Microsoft.Samples.Kinect.ContinuousGestureBasics
 
 
 */
+
                         // clamp the progress value between 0 and 1
                         if (scrollProgress < 0)
                         {
