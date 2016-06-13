@@ -56,7 +56,7 @@ namespace Microsoft.Samples.Kinect.ContinuousGestureBasics
         private bool isTracked = false;
 
         /// <summary> SpaceView object in UI which has a spaceship that needs to be updated when we get new gesture results from the sensor </summary>
-        private SpaceView spaceView = null;
+       // private SpaceView spaceView = null;
 
         /// <summary>
         /// Initializes a new instance of the GestureResultView class and sets initial property values
@@ -73,13 +73,10 @@ namespace Microsoft.Samples.Kinect.ContinuousGestureBasics
         /// <param name="upPoint">True, if the 'Steer_Left' gesture is currently detected</param>
         /// <param name="downPoint">True, if the 'Steer_Right' gesture is currently detected</param>
         /// <param name="middlePoint">True, if the 'PointMiddle' gesture is currently detected</param>
-        /// <param name="space">SpaceView object in UI which should be updated with latest gesture result data</param>
-        public GestureResultView(bool isTracked, bool up, bool down, bool straightScroll, bool close, bool far, bool straightZoom, bool upPoint, bool downPoint, bool middlePoint, float progressScroll, float progressZoom, SpaceView space)
+        
+        public GestureResultView(bool isTracked, bool up, bool down, bool straightScroll, bool close, bool far, bool straightZoom, bool upPoint, bool downPoint, bool middlePoint, float progressScroll, float progressZoom)
         {
-            if (space == null)
-            {
-                throw new ArgumentNullException("spaceView");
-            }
+            
 
             this.IsTracked = isTracked;
             this.goUp = up;
@@ -93,7 +90,7 @@ namespace Microsoft.Samples.Kinect.ContinuousGestureBasics
             this.UpButton = upPoint;
             this.DownButton = downPoint;
             this.MiddleButton = middlePoint;
-            this.spaceView = space;
+           
         }
 
         /// <summary> 
@@ -340,7 +337,7 @@ namespace Microsoft.Samples.Kinect.ContinuousGestureBasics
             }
 
             // move the ship in space, using the latest gesture detection results
-            this.spaceView.UpdateShipPosition(this.GoUp, this.GoDown, this.MiddleButton, this.ScrollProgress);
+           // this.spaceView.UpdateShipPosition(this.GoUp, this.GoDown, this.MiddleButton, this.ScrollProgress);
         }
     }
 }

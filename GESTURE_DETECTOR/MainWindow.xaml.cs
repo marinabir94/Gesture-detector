@@ -52,7 +52,7 @@ namespace Microsoft.Samples.Kinect.ContinuousGestureBasics
         private GestureResultView gestureResultView = null;
 
         /// <summary> SpaceView for displaying spaceship position and rotation, which are related to gesture detection results </summary>
-        private SpaceView spaceView = null;
+       // private SpaceView spaceView = null;
 
         /// <summary> Timer for updating Kinect frames and space images at 60 fps </summary>
         private DispatcherTimer dispatcherTimer = null;
@@ -81,18 +81,18 @@ namespace Microsoft.Samples.Kinect.ContinuousGestureBasics
             this.kinectBodyView = new KinectBodyView(this.kinectSensor);
 
             // initialize the SpaceView object
-            this.spaceView = new SpaceView(this.spaceGrid, this.spaceImage);
+           // this.spaceView = new SpaceView(this.spaceGrid, this.spaceImage);
 
             // initialize the GestureDetector object
-            this.gestureResultView = new GestureResultView(false, false, false, false, false, false, false, false, false, false, -1.0f, -1.0f, this.spaceView);
+            this.gestureResultView = new GestureResultView(false, false, false, false, false, false, false, false, false, false, -1.0f, -1.0f);
             this.gestureDetector = new GestureDetector(this.kinectSensor, this.gestureResultView);
 
             // set data context objects for display in UI
             this.DataContext = this;
             this.kinectBodyViewbox.DataContext = this.kinectBodyView;
             this.gestureResultGrid.DataContext = this.gestureResultView;
-            this.spaceGrid.DataContext = this.spaceView;
-            this.collisionResultGrid.DataContext = this.spaceView;
+            //this.spaceGrid.DataContext = this.spaceView;
+           // this.collisionResultGrid.DataContext = this.spaceView;
         }
 
         /// <summary>
