@@ -18,7 +18,7 @@
             <RowDefinition Height="Auto" />
             <RowDefinition />
         </Grid.RowDefinitions>
-        <TextBlock Grid.Row="0" HorizontalAlignment="Right" Text="Continuous gesture detector" VerticalAlignment="Bottom" Margin="0,0,203.6,5.2" Foreground="{StaticResource MediumGreyBrush}" FontFamily="Segoe UI" FontSize="18"/>
+        <TextBlock Grid.Row="0" HorizontalAlignment="Right" Text="Gesture detector" VerticalAlignment="Bottom" Margin="0,0,203.6,5.2" Foreground="{StaticResource MediumGreyBrush}" FontFamily="Segoe UI" FontSize="18"/>
         <Image Grid.Row="0" Source="Images\Status.png" Stretch="None" HorizontalAlignment="Center" Margin="435,0,472.6,5.2" />
 
         <Grid x:Name="contentGrid" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="178,12.8,203.6,29.4" Height="553" Grid.Row="1" Width="576">
@@ -71,7 +71,7 @@
                 
             </Grid>
 
-            <TextBlock Grid.Row="3" TextWrapping="Wrap" Margin="10,38.6,0,23.8" Foreground="{StaticResource MediumGreyBrush}" FontFamily="Arial" FontSize="18"><Run Background="White" Foreground="Black" FontSize="12.6666666666667" Text="Gestures that can be detected: Point up, Point to the middle, Point down, Scroll up, Scroll down, Zoom in and Zoom out."/><LineBreak/><Run Background="White" Foreground="Black" FontSize="12.6666666666667" Text="Stand in front of the camera and perform the previous gestures. "/></TextBlock>
+            <TextBlock Grid.Row="3" TextWrapping="Wrap" Margin="43,31.4,31,27.8" Foreground="{StaticResource MediumGreyBrush}" FontFamily="Arial" FontSize="18"><Run Background="White" Foreground="Black" FontSize="12.6666666666667" Text="GESTURES THAT CAN BE DETECTED"/><Run Background="White" Foreground="Black" FontSize="12.6666666666667" Text=":"/><LineBreak/><Run Background="White" Foreground="Black" FontSize="12.6666666666667" Text="Point up, Point to the middle, Point down, Scroll up, Scroll down,"/><Run Background="White" Foreground="Black" FontSize="12.6666666666667" Text=" Zoom in and Zoom out. "/><Run Background="White" Foreground="Black" FontSize="12.6666666666667" Text=" "/><Run Background="White" Foreground="Black" FontSize="12.6666666666667" Text="        "/><Run Background="White" Foreground="Black" FontSize="12.6666666666667" Text=" "/><Run Background="White" Foreground="Black" FontSize="12.6666666666667" Text=" "/><Run Background="White" Foreground="Black" FontSize="12.6666666666667" Text="             "/><Run Background="White" Foreground="Black" FontSize="12.6666666666667" Text="           "/><LineBreak/></TextBlock>
 
         </Grid>
 

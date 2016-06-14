@@ -401,10 +401,7 @@ namespace Microsoft.Samples.Kinect.ContinuousGestureBasics
                             }
                         }
                        
-
-
-               
-
+            
                         // clamp the progress value between 0 and 1
                         if (scrollProgress < 0)
                         {
