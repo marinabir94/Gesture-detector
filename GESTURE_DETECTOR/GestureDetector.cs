@@ -29,14 +29,14 @@ namespace Microsoft.Samples.Kinect.ContinuousGestureBasics
         IPEndPoint vizArtist = new IPEndPoint(IPAddress.Loopback, 8000);
 
 
-        
+
         /// <summary> Path to the gesture database that was trained with VGB </summary>
         private readonly string gestureDatabase = @"C:\Users\Gesture\Desktop\KINECTv2\ContiDiscrGestureBasics\GESTURE_DETECTOR\GESTURE_DETECTOR\Database\GESTURE_DETECTOR_VGB.gbd";
 
-        /// <summary> Name of the discrete gesture in the database for detecting when the user is scrolling up at the maximum level </summary>
+        /// <summary> Name of the discrete gesture in the database for detecting when the user is holding the maximum up turn position </summary>
         private readonly string maxUpGestureName = "Max_Up";
 
-        /// <summary> Name of the discrete gesture in the database for detecting when the user is scrolling up at the minimum level </summary>
+        /// <summary> Name of the discrete gesture in the database for detecting when the user is holding the maximum down turn position </summary>
         private readonly string maxDownGestureName = "Max_Down";
 
         /// <summary> Name of the discrete gesture in the database for detecting when the user is actively scrolling up the map </summary>
@@ -48,28 +48,28 @@ namespace Microsoft.Samples.Kinect.ContinuousGestureBasics
         /// <summary> Name of the continuous gesture in the database which tracks the scrolling up progress </summary>
         private readonly string scrollProgressGestureName = "ScrollProgress";
 
-        /// <summary> Name of the discrete gesture in the database for detecting when the user is zooming in at the maximum level </summary>
+        /// <summary> Name of the discrete gesture in the database for detecting when the user is holding the maximum up turn position </summary>
         private readonly string maxInGestureName = "Max_In";
 
-        /// <summary> Name of the discrete gesture in the database for detecting when the user is zooming up at the minimum level </summary>
+        /// <summary> Name of the discrete gesture in the database for detecting when the user is holding the maximum down turn position </summary>
         private readonly string maxOutGestureName = "Max_Out";
 
-        /// <summary> Name of the discrete gesture in the database for detecting when the user is actively zooming in the map </summary>
+        /// <summary> Name of the discrete gesture in the database for detecting when the user is actively scrolling up the map </summary>
         private readonly string zoomInGestureName = "Zoom_In";
 
-        /// <summary> Name of the discrete gesture in the database for detecting when the user is actively zooming out the map </summary>
+        /// <summary> Name of the discrete gesture in the database for detecting when the user is actively scrolling down the map </summary>
         private readonly string zoomOutGestureName = "Zoom_Out";
 
         /// <summary> Name of the continuous gesture in the database which tracks the scrolling up progress </summary>
         private readonly string zoomProgressGestureName = "ZoomProgress";
 
-        /// <summary> Name of the discrete gesture in the database for detecting when the user is holding the maximum up turn position </summary>
+        /// <summary> Name of the discrete gesture in the database for detecting when the user is pointing up. </summary>
         private readonly string pointUpGestureName = "PointUp";
 
-        /// <summary> Name of the discrete gesture in the database for detecting when the user is holding the maximum right turn position </summary>
+        /// <summary> Name of the discrete gesture in the database for detecting when the user is pointing down.</summary>
         private readonly string pointDownGestureName = "PointDown";
 
-        /// <summary> Name of the discrete gesture in the database for detecting when the user is holding the wheel straight </summary>
+        /// <summary> Name of the discrete gesture in the database for detecting when the user is pointing to the middle </summary>
         private readonly string pointMiddleGestureName = "PointMiddle";
 
 
@@ -359,10 +359,10 @@ namespace Microsoft.Samples.Kinect.ContinuousGestureBasics
                                     ContinuousGestureResult result = null;
                                     continuousResults.TryGetValue(gesture, out result);
 
-                                   
+
                                     if (result != null)
                                     {
-                                       scrollProgress = result.Progress;
+                                        scrollProgress = result.Progress;
 
                                         if (scrollUp || scrollDown)
                                         {
@@ -384,7 +384,7 @@ namespace Microsoft.Samples.Kinect.ContinuousGestureBasics
                                     {
                                         zoomProgress = result.Progress;
 
-                                        if (zoomIn || zoomOut )
+                                        if (zoomIn || zoomOut)
                                         {
 
                                             OscMessage OSCmessagezoomProgress = new OscMessage(myDetector, "/ZoomProgress", zoomProgress);
@@ -392,7 +392,7 @@ namespace Microsoft.Samples.Kinect.ContinuousGestureBasics
                                             OSCmessagezoomProgress.Send(myDetector);
 
                                         }
-                                         
+
                                     }
                                 }
 
@@ -400,76 +400,10 @@ namespace Microsoft.Samples.Kinect.ContinuousGestureBasics
 
                             }
                         }
-/*
-                        // if either the 'Steer_Left' or 'MaxTurn_Left' gesture is detected, then we want to turn the ship left
-                        if (scrollUp || maxUp)
-                        {
-                            scrollUp = true;
-                            scrollDown = false;
-                            keepLevel = false;
-                            keepLevelZoom = true;
-
-                        }
-
-                        // if either the 'Steer_Right' or 'MaxTurn_Right' gesture is detected, then we want to turn the ship right
-                        if ((scrollDown) || maxDown)
-                        {
-                            scrollDown = true;
-                            scrollUp = false;
-                            keepLevel = false;
-                            keepLevelZoom = true;
-                        }
-
-                        // if "Point_Up" is detected, then we want to go forwards.
-                        if (upButton)
-                        {
-                            upButton = true;
-                            downButton = false;
-                            middleButton = true;
-                            keepLevel = true;
-                            keepLevelZoom = true;
-
-                        }
+                       
 
 
-                        //If "Point_Down" is detected, then we want to go backwards.
-                        if( downButton)
-                        {
-                            downButton = true;
-                            upButton = false;
-                            middleButton = false;
-                            keepLevel = true;
-                            keepLevelZoom = true;
-                        }
-
-
-                        //If "Point_Middle" is detected, then we want to go stop.
-                        if (middleButton)
-                        {
-                            middleButton = true;
-                            keepLevel = true;
-                            keepLevelZoom = true;
-                        }
-//
-                        if (zoomIn)
-                        {
-                            zoomIn = true;
-                            zoomOut = false;
-                            keepLevelZoom = false;
-                            keepLevel = true;
-
-                        }
-
-                        if(zoomOut)
-                        {
-                            zoomIn = false;
-                            zoomOut = true;
-                            keepLevelZoom = false;
-                            keepLevel = true;
-                        }
-
-
-*/
+               
 
                         // clamp the progress value between 0 and 1
                         if (scrollProgress < 0)
@@ -505,7 +439,7 @@ namespace Microsoft.Samples.Kinect.ContinuousGestureBasics
                         }
 
                         // update the UI with the latest gesture detection results
-                        this.GestureResultView.UpdateGestureResult(true, scrollUp, scrollDown, keepLevel,  scrollProgress,  zoomIn,  zoomOut,  keepLevelZoom,  zoomProgress,  upButton, downButton, middleButton);
+                        this.GestureResultView.UpdateGestureResult(true, scrollUp, scrollDown, keepLevel, scrollProgress, zoomIn, zoomOut, keepLevelZoom, zoomProgress, upButton, downButton, middleButton);
                     }
                 }
             }
@@ -530,4 +464,3 @@ namespace Microsoft.Samples.Kinect.ContinuousGestureBasics
         }
     }
 }
-

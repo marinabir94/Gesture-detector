@@ -5,10 +5,11 @@
 //
 // <Description>
 // This program detects a set of discrete and continuous gestures for a single, tracked person.
-// If a person is tracked, the gesture detector will listen for a set of steering gestures (Steer_Left, Steer_Right, SteerProgress, etc).
-// If any steering gestures are detected, the position of the space ship will be updated using the Progress value reported by the continuous (SteerProgress) gesture.
-// If no person is tracked, the gesture detector will be paused and the space images will stop moving.
-// Note: This sample uses polling to get new frames from the Kinect sensor at 60 fps; for event notification, please see the 'DiscreteGestureBasics-WPF' sample.
+// If a person is tracked, the gesture detector will listen for a set of  gestures (ScrollUp, ScrollDown, ZoomIn, ZoomOut, etc.).
+// If any sknown gesture is detected, a specific OSC message unique for each gesture will be sent. 
+// If no person is tracked, the gesture detector will be paused.
+// This program is based on the DiscreteGestureBasics-WPF of the Kinect SDKs C# samples 
+
 // </Description>
 //-------------------------------------------------------------------------------------------------------------------------------
 
@@ -51,9 +52,7 @@ namespace Microsoft.Samples.Kinect.ContinuousGestureBasics
         /// <summary> GestureResultView for displaying gesture results associated with the tracked person in the UI </summary>
         private GestureResultView gestureResultView = null;
 
-        /// <summary> SpaceView for displaying spaceship position and rotation, which are related to gesture detection results </summary>
-       // private SpaceView spaceView = null;
-
+   
         /// <summary> Timer for updating Kinect frames and space images at 60 fps </summary>
         private DispatcherTimer dispatcherTimer = null;
 
@@ -80,8 +79,6 @@ namespace Microsoft.Samples.Kinect.ContinuousGestureBasics
             // initialize the BodyViewer object for displaying tracked bodies in the UI
             this.kinectBodyView = new KinectBodyView(this.kinectSensor);
 
-            // initialize the SpaceView object
-           // this.spaceView = new SpaceView(this.spaceGrid, this.spaceImage);
 
             // initialize the GestureDetector object
             this.gestureResultView = new GestureResultView(false, false, false, false, false, false, false, false, false, false, -1.0f, -1.0f);
@@ -91,8 +88,7 @@ namespace Microsoft.Samples.Kinect.ContinuousGestureBasics
             this.DataContext = this;
             this.kinectBodyViewbox.DataContext = this.kinectBodyView;
             this.gestureResultGrid.DataContext = this.gestureResultView;
-            //this.spaceGrid.DataContext = this.spaceView;
-           // this.collisionResultGrid.DataContext = this.spaceView;
+         
         }
 
         /// <summary>
@@ -155,36 +151,11 @@ namespace Microsoft.Samples.Kinect.ContinuousGestureBasics
             this.UpdateKinectStatusText();
             this.UpdateKinectFrameData();
         }
-/*
-            if (!this.spaceView.ExplosionInProgress)
-            {
-                if (this.bodies != null)
-                {
-                    // only move asteroids when someone is available to drive the ship
-                    if (this.bodies[this.activeBodyIndex].IsTracked)
-                    {
-                        this.spaceView.UpdateTimeSinceCollision(false);
-                        this.spaceView.UpdateAsteroids();
-                        this.spaceView.CheckForCollision();
-                    }
-                    else
-                    {
-                        // pause the collision timer when no bodies are tracked
-                        this.spaceView.UpdateTimeSinceCollision(true);
-                    }
-                }
-            }
-           
-            else
-            {
-                this.spaceView.UpdateExplosion();
-            }
-        }
-     */
+
 
         /// <summary>
         /// Starts the dispatcher timer to check for new Kinect frames and update objects in space @60fps
-        /// Note: We are using a dispatcher timer to demonstrate usage of the VGB polling APIs,
+     
         /// please see the 'DiscreteGestureBasics-WPF' sample for event notification.
         /// </summary>
         /// <param name="sender">object sending the event</param>

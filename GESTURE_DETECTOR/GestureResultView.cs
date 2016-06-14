@@ -42,21 +42,20 @@ namespace Microsoft.Samples.Kinect.ContinuousGestureBasics
         /// <summary> Current progress value reported by the continuous 'zoomProgress' gesture </summary>
         private float zoomProgress = 0.0f;
 
-        /// <summary> True, if the user is attempting to turn up (either 'Steer_Left' or 'PointUp' is detected) </summary>
+        /// <summary> True, if the user is attempting to press up </summary>
         private bool upButton = false;
 
-        /// <summary> True, if the user is attempting to turn down (either 'Steer_Right' or 'PointDown' is detected) </summary>
+        /// <summary> True, if the user is attempting to press down. </summary>
         private bool downButton = false;
 
-        /// <summary> True, if the user is holding the wheel, but not turning it (Closed hands detected) </summary>
+        /// <summary> True, if the user is attempting to press to the middle. </summary>
         private bool middleButton = false;
 
 
         /// <summary> True, if the body is currently being tracked </summary>
         private bool isTracked = false;
 
-        /// <summary> SpaceView object in UI which has a spaceship that needs to be updated when we get new gesture results from the sensor </summary>
-       // private SpaceView spaceView = null;
+    
 
         /// <summary>
         /// Initializes a new instance of the GestureResultView class and sets initial property values
@@ -237,7 +236,7 @@ namespace Microsoft.Samples.Kinect.ContinuousGestureBasics
             }
         }
         /// <summary> 
-        /// Gets a value indicating whether the user is attempting to turn the ship up 
+        /// Gets a value indicating whether the user is attempting to press the Up button
         /// </summary>
         public bool UpButton
         {
@@ -253,7 +252,7 @@ namespace Microsoft.Samples.Kinect.ContinuousGestureBasics
         }
 
         /// <summary> 
-        /// Gets a value indicating whether the user is attempting to turn the ship down 
+        /// Gets a value indicating whether the user is attempting to press the down button
         /// </summary>
         public bool DownButton
         {
@@ -269,7 +268,7 @@ namespace Microsoft.Samples.Kinect.ContinuousGestureBasics
         }
 
         /// <summary> 
-        /// Gets a value indicating whether the user is trying to keep the ship middle
+        /// Gets a value indicating whether the user is trying to press the middle button.
         /// </summary>
         public bool MiddleButton
         {
@@ -335,9 +334,7 @@ namespace Microsoft.Samples.Kinect.ContinuousGestureBasics
                 this.MiddleButton = middlePoint;
 
             }
-
-            // move the ship in space, using the latest gesture detection results
-           // this.spaceView.UpdateShipPosition(this.GoUp, this.GoDown, this.MiddleButton, this.ScrollProgress);
+            
         }
     }
 }

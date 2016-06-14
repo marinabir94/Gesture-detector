@@ -108,8 +108,6 @@
     </Compile>
     <Compile Include="Common\BindableBase.cs" />
     <Compile Include="GestureDetector.cs" />
-    <Compile Include="MovingSpaceImage.cs" />
-    <Compile Include="SpaceView.cs" />
     <Compile Include="GestureResultView.cs" />
     <Compile Include="KinectBodyView.cs" />
     <Compile Include="MainWindow.xaml.cs">
@@ -131,10 +129,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Resource Include="Images\explosion.png" />
-    <Resource Include="Images\asteroid.png" />
-    <Resource Include="Images\spaceship.png" />
-    <Resource Include="Images\space.png" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -142,9 +136,6 @@
     </EmbeddedResource>
     <Content Include="Bespoke.Common.dll" />
     <Content Include="Bespoke.Common.Osc.dll" />
-    <Content Include="Database\Steering.gbd">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <None Include="Database\GESTURE_DETECTOR_VGB.gbd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
