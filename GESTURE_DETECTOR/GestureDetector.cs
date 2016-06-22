@@ -173,7 +173,7 @@ namespace Microsoft.Samples.Kinect.ContinuousGestureBasics
             {
                 if (frame != null)
                 {
-                    // get all discrete and continuous gesture results that arrived with the latest frame
+                    // gets all discrete and continuous gesture results that arrived with the latest frame
                     var discreteResults = frame.DiscreteGestureResults;
                     var continuousResults = frame.ContinuousGestureResults;
 
@@ -379,6 +379,7 @@ namespace Microsoft.Samples.Kinect.ContinuousGestureBasics
                                 {
                                     ContinuousGestureResult result = null;
                                     continuousResults.TryGetValue(gesture, out result);
+                                    
 
                                     if (result != null)
                                     {
