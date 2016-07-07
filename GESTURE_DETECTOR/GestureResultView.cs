@@ -51,11 +51,13 @@ namespace Microsoft.Samples.Kinect.ContinuousGestureBasics
         /// <summary> True, if the user is attempting to press to the middle. </summary>
         private bool middleButton = false;
 
+        /// <summary> True, if the user is attempting to press to the middle. </summary>
+        private bool startApp = false;
 
         /// <summary> True, if the body is currently being tracked </summary>
         private bool isTracked = false;
 
-    
+
 
         /// <summary>
         /// Initializes a new instance of the GestureResultView class and sets initial property values
@@ -72,8 +74,9 @@ namespace Microsoft.Samples.Kinect.ContinuousGestureBasics
         /// <param name="upPoint">True, if the 'Steer_Left' gesture is currently detected</param>
         /// <param name="downPoint">True, if the 'Steer_Right' gesture is currently detected</param>
         /// <param name="middlePoint">True, if the 'PointMiddle' gesture is currently detected</param>
-        
-        public GestureResultView(bool isTracked, bool up, bool down, bool straightScroll, bool close, bool far, bool straightZoom, bool upPoint, bool downPoint, bool middlePoint, float progressScroll, float progressZoom)
+        /// <param name="init">True, if the 'PointMiddle' gesture is currently detected</param>
+
+        public GestureResultView(bool isTracked, bool up, bool down, bool straightScroll, bool close, bool far, bool straightZoom, bool upPoint, bool downPoint, bool middlePoint, bool startApp, float progressScroll, float progressZoom)
         {
             
 
@@ -89,6 +92,7 @@ namespace Microsoft.Samples.Kinect.ContinuousGestureBasics
             this.UpButton = upPoint;
             this.DownButton = downPoint;
             this.MiddleButton = middlePoint;
+            this.StartApp = startApp;
            
         }
 
@@ -283,25 +287,39 @@ namespace Microsoft.Samples.Kinect.ContinuousGestureBasics
             }
         }
 
+        public bool StartApp
+        {
+            get
+            {
+                return this.startApp;
+            }
+
+            private set
+            {
+                this.SetProperty(ref this.startApp, value);
+            }
+        }
+
 
 
         /// <summary>
         /// Updates gesture detection result values for display in the UI
         /// </summary>
-        /// <param name="isBodyTrackingIdValid">True, if the body associated with the GestureResultView object is still being tracked</param>
-        /// <param name="up">True, if detection results indicate that the user is attempting to turn the ship up</param>
-        /// <param name="down">True, if detection results indicate that the user is attempting to turn the ship down</param>
-        /// <param name="straightScroll">True, if detection results indicate that the user is attempting to keep the ship straight</param>
-        /// <param name="progressScroll">The current progress value of the 'scrollProgress' continuous gesture</param>
-        /// <param name="close">True, if detection results indicate that the user is attempting to turn the ship up</param>
-        /// <param name="far">True, if detection results indicate that the user is attempting to turn the ship down</param>
-        /// <param name="straightZoom">True, if detection results indicate that the user is attempting to keep the ship straight</param>
-        /// <param name="progressZoom">The current progress value of the 'scrollProgress' continuous gesture</param>
-        /// <param name="upPoint">True, if detection results indicate that the user is attempting to turn the ship up</param>
-        /// <param name="downPoint">True, if detection results indicate that the user is attempting to turn the ship down</param>
-        /// <param name="middlePoint">True, if detection results indicate that the user is attempting to keep the ship middle</param>
+        /// <param name="isBodyTrackingIdValid"
+        /// <param name="up"
+        /// <param name="down"
+        /// <param name="straightScroll"
+        /// <param name="progressScroll"
+        /// <param name="close"
+        /// <param name="far"
+        /// <param name="straightZoom"
+        /// <param name="progressZoom"
+        /// <param name="upPoint"
+        /// <param name="downPoint"
+        /// <param name="middlePoint"
+        /// <param name="init"
 
-        public void UpdateGestureResult(bool isBodyTrackingIdValid, bool up, bool down, bool straightScroll, float progressScroll, bool close, bool far, bool straightZoom, float progressZoom, bool upPoint, bool downPoint, bool middlePoint)
+        public void UpdateGestureResult(bool isBodyTrackingIdValid, bool up, bool down, bool straightScroll, float progressScroll, bool close, bool far, bool straightZoom, float progressZoom, bool upPoint, bool downPoint, bool middlePoint, bool init)
         {
             this.IsTracked = isBodyTrackingIdValid;
 
@@ -318,6 +336,7 @@ namespace Microsoft.Samples.Kinect.ContinuousGestureBasics
                 this.UpButton = false;
                 this.DownButton = false;
                 this.MiddleButton = false;
+                this.StartApp = false;
             }
             else
             {
@@ -332,6 +351,7 @@ namespace Microsoft.Samples.Kinect.ContinuousGestureBasics
                 this.UpButton = upPoint;
                 this.DownButton = downPoint;
                 this.MiddleButton = middlePoint;
+                this.StartApp = startApp;
 
             }
             

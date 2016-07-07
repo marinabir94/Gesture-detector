@@ -81,7 +81,7 @@ namespace Microsoft.Samples.Kinect.ContinuousGestureBasics
 
 
             // initialize the GestureDetector object
-            this.gestureResultView = new GestureResultView(false, false, false, false, false, false, false, false, false, false, -1.0f, -1.0f);
+            this.gestureResultView = new GestureResultView(false, false, false, false, false, false, false, false, false, false, false, -1.0f, -1.0f);
             this.gestureDetector = new GestureDetector(this.kinectSensor, this.gestureResultView);
 
             // set data context objects for display in UI
@@ -286,7 +286,7 @@ namespace Microsoft.Samples.Kinect.ContinuousGestureBasics
                     // the active body is not tracked, pause the detector and update the UI
                     this.gestureDetector.IsPaused = true;
 
-                    this.gestureResultView.UpdateGestureResult(false, false, false, false, -1.0f, false, false, false, -1.0f, false, false, false);
+                    this.gestureResultView.UpdateGestureResult(false, false, false, false, -1.0f, false, false, false, -1.0f, false, false, false, false);
                 }
                 else
                 {

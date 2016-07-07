@@ -72,6 +72,9 @@ namespace Microsoft.Samples.Kinect.ContinuousGestureBasics
         /// <summary> Name of the discrete gesture in the database for detecting when the user is pointing to the middle </summary>
         private readonly string pointMiddleGestureName = "PointMiddle";
 
+        /// <summary> Name of the discrete gesture in the database for detecting when the user wants to start the application </summary>
+        private readonly string startGestureName = "Start";
+
 
         /// <summary> Gesture frame source which should be tied to a body tracking ID </summary>
         private VisualGestureBuilderFrameSource vgbFrameSource = null;
@@ -194,6 +197,7 @@ namespace Microsoft.Samples.Kinect.ContinuousGestureBasics
                         bool upButton = this.GestureResultView.UpButton;
                         bool downButton = this.GestureResultView.DownButton;
                         bool middleButton = this.GestureResultView.MiddleButton;
+                        bool startApp = this.GestureResultView.StartApp;
 
 
                         foreach (var gesture in this.vgbFrameSource.Gestures)
@@ -349,6 +353,19 @@ namespace Microsoft.Samples.Kinect.ContinuousGestureBasics
                                             OSCmessagePointMiddle.Send(myDetector);
                                         }
                                     }
+
+                                    else if (gesture.Name.Equals(this.startGestureName))
+                                    {
+                                        startApp = result.Detected;
+
+                                        if (startApp = result.Detected)
+                                        {
+
+                                            OscMessage OSCmessageStart = new OscMessage(myDetector, "/Start", 1.0f);
+
+                                            OSCmessageStart.Send(myDetector);
+                                        }
+                                    }
                                 }
                             }
                             // It gives a value for each continuous gesture ZOOMING & SCROLLING
@@ -437,7 +454,7 @@ namespace Microsoft.Samples.Kinect.ContinuousGestureBasics
                         }
 
                         // update the UI with the latest gesture detection results
-                        this.GestureResultView.UpdateGestureResult(true, scrollUp, scrollDown, keepLevel, scrollProgress, zoomIn, zoomOut, keepLevelZoom, zoomProgress, upButton, downButton, middleButton);
+                        this.GestureResultView.UpdateGestureResult(true, scrollUp, scrollDown, keepLevel, scrollProgress, zoomIn, zoomOut, keepLevelZoom, zoomProgress, upButton, downButton, middleButton, startApp);
                     }
                 }
             }
