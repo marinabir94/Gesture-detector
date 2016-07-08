@@ -25,8 +25,8 @@ namespace Microsoft.Samples.Kinect.ContinuousGestureBasics
     public sealed class GestureDetector : IDisposable
 
     {
-        IPEndPoint myDetector = new IPEndPoint(IPAddress.Loopback, 7001);
-        IPEndPoint vizArtist = new IPEndPoint(IPAddress.Loopback, 8000);
+        IPEndPoint myDetector = new IPEndPoint(IPAddress.Loopback, 8000);
+        IPEndPoint vizArtist = new IPEndPoint(IPAddress.Loopback, 7000);
 
 
 
