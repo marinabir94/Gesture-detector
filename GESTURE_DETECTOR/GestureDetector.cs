@@ -55,6 +55,9 @@ namespace Microsoft.Samples.Kinect.ContinuousGestureBasics
         private readonly string maxOutGestureName = "Max_Out";
 
         /// <summary> Name of the discrete gesture in the database for detecting when the user is actively scrolling up the map </summary>
+        private readonly string keepLevelZoomGestureName = "keepLevelZoom";
+
+        /// <summary> Name of the discrete gesture in the database for detecting when the user is actively scrolling up the map </summary>
         private readonly string zoomInGestureName = "Zoom_In";
 
         /// <summary> Name of the discrete gesture in the database for detecting when the user is actively scrolling down the map </summary>
@@ -192,7 +195,7 @@ namespace Microsoft.Samples.Kinect.ContinuousGestureBasics
                         bool maxOut = false;
                         bool zoomIn = this.GestureResultView.GoClose;
                         bool zoomOut = this.GestureResultView.GoFar;
-                        bool keepLevelZoom = this.GestureResultView.KeepLevelZoom;
+                        bool keepLevel2Zoom = this.GestureResultView.KeepingLevelZoom;
                         float zoomProgress = this.GestureResultView.ZoomProgress;
                         bool upButton = this.GestureResultView.UpButton;
                         bool downButton = this.GestureResultView.DownButton;
@@ -260,6 +263,19 @@ namespace Microsoft.Samples.Kinect.ContinuousGestureBasics
 
                                             OSCmessageMaxDown.Send(myDetector);
 
+                                        }
+                                    }
+
+                                    else if (gesture.Name.Equals(this.keepLevelZoomGestureName))
+                                    {
+                                        keepLevel2Zoom = result.Detected;
+
+                                        if (keepLevel2Zoom = result.Detected)
+                                        {
+
+                                            OscMessage OSCmessageZoomIn = new OscMessage(myDetector, "/keepLevel2Zoom", 1.0f);
+
+                                            OSCmessageZoomIn.Send(myDetector);
                                         }
                                     }
 
@@ -454,7 +470,7 @@ namespace Microsoft.Samples.Kinect.ContinuousGestureBasics
                         }
 
                         // update the UI with the latest gesture detection results
-                        this.GestureResultView.UpdateGestureResult(true, scrollUp, scrollDown, keepLevel, scrollProgress, zoomIn, zoomOut, keepLevelZoom, zoomProgress, upButton, downButton, middleButton, startApp);
+                        this.GestureResultView.UpdateGestureResult(true, scrollUp, scrollDown, keepLevel, scrollProgress, zoomIn, zoomOut, keepLevel2Zoom, zoomProgress, upButton, downButton, middleButton, startApp);
                     }
                 }
             }

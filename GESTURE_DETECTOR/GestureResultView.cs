@@ -37,7 +37,7 @@ namespace Microsoft.Samples.Kinect.ContinuousGestureBasics
         private bool goFar = false;
 
         /// <summary> True, if the user is not doing any gesture</summary>
-        private bool keepLevelZoom = false;
+        private bool keepingLevelZoom = false;
 
         /// <summary> Current progress value reported by the continuous 'zoomProgress' gesture </summary>
         private float zoomProgress = 0.0f;
@@ -87,7 +87,7 @@ namespace Microsoft.Samples.Kinect.ContinuousGestureBasics
             this.scrollProgress = progressScroll;
             this.goClose = close;
             this.goFar = far;
-            this.keepLevelZoom = straightZoom;
+            this.keepingLevelZoom = straightZoom;
             this.zoomProgress = progressZoom;
             this.UpButton = upPoint;
             this.DownButton = downPoint;
@@ -175,6 +175,21 @@ namespace Microsoft.Samples.Kinect.ContinuousGestureBasics
                 this.SetProperty(ref this.scrollProgress, value);
             }
         }
+        /// <summary> 
+        /// Gets a value indicating whether the user is attempting to go up
+        /// </summary>
+        public bool KeepingLevelZoom
+        {
+            get
+            {
+                return this.keepingLevelZoom;
+            }
+
+            private set
+            {
+                this.SetProperty(ref this.keepingLevelZoom, value);
+            }
+        }
 
         /// <summary> 
         /// Gets a value indicating whether the user is attempting to go up
@@ -208,21 +223,7 @@ namespace Microsoft.Samples.Kinect.ContinuousGestureBasics
             }
         }
 
-        /// <summary> 
-        /// Gets a value indicating whether the user is trying to keep straight the map
-        /// </summary>
-        public bool KeepLevelZoom
-        {
-            get
-            {
-                return this.keepLevelZoom;
-            }
-
-            private set
-            {
-                this.SetProperty(ref this.keepLevelZoom, value);
-            }
-        }
+ 
 
         /// <summary> 
         /// Gets a value indicating the progress associated with the 'scrollUpProgress' gesture for the tracked body 
@@ -331,7 +332,7 @@ namespace Microsoft.Samples.Kinect.ContinuousGestureBasics
                 this.scrollProgress = -1.0f;
                 this.goClose = false;
                 this.goFar = false;
-                this.keepLevelZoom = false;
+                this.keepingLevelZoom = false;
                 this.zoomProgress = -1.0f;
                 this.UpButton = false;
                 this.DownButton = false;
@@ -346,7 +347,7 @@ namespace Microsoft.Samples.Kinect.ContinuousGestureBasics
                 this.scrollProgress = progressScroll;
                 this.goClose = close;
                 this.goFar = far;
-                this.keepLevelZoom = straightZoom;
+                this.keepingLevelZoom = straightZoom;
                 this.zoomProgress = progressZoom;
                 this.UpButton = upPoint;
                 this.DownButton = downPoint;
