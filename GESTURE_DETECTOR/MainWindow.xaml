@@ -23,7 +23,6 @@
             <RowDefinition />
         </Grid.RowDefinitions>
         <TextBlock Grid.Row="0" HorizontalAlignment="Right" Text="Gesture detector" VerticalAlignment="Bottom" Margin="0,0,202.6,5.2" Foreground="{StaticResource MediumGreyBrush}" FontFamily="Segoe UI" FontSize="18" Grid.Column="1"/>
-        <Image Grid.Row="0" Source="Images\Status.png" Stretch="None" HorizontalAlignment="Center" Margin="356.6,0,472.6,5.2" Grid.Column="1" />
 
         <Grid x:Name="contentGrid" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="99.6,12.8,203.6,29.4" Height="553" Grid.Row="1" Width="576" Grid.Column="1">
             <Grid.ColumnDefinitions>
@@ -67,7 +66,7 @@
 
             </Grid>
 
-            <Grid x:Name="collisionResultGrid" Grid.Column="0" Grid.Row="2" Margin="5,27.8,168,0" Background="Black" VerticalAlignment="Top" Height="430">
+            <Grid x:Name="collisionResultGrid" Grid.Column="0" Grid.Row="2" Margin="5,4.8,10,0" Background="Black" VerticalAlignment="Top" Height="414">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
@@ -75,7 +74,7 @@
 
             </Grid>
 
-            <TextBlock Grid.Row="3" TextWrapping="Wrap" Margin="43,31.4,31,27.8" Foreground="{StaticResource MediumGreyBrush}" FontFamily="Arial" FontSize="18"><Run Background="White" Foreground="Black" FontSize="12.6666666666667" Text="GESTURES THAT CAN BE DETECTED"/><Run Background="White" Foreground="Black" FontSize="12.6666666666667" Text=":"/><LineBreak/><Run Background="White" Foreground="Black" FontSize="12.6666666666667" Text="Point up, Point to the middle, Point down, Scroll up, Scroll down,"/><Run Background="White" Foreground="Black" FontSize="12.6666666666667" Text=" Zoom in and Zoom out. "/><Run Background="White" Foreground="Black" FontSize="12.6666666666667" Text=" "/><Run Background="White" Foreground="Black" FontSize="12.6666666666667" Text="        "/><Run Background="White" Foreground="Black" FontSize="12.6666666666667" Text=" "/><Run Background="White" Foreground="Black" FontSize="12.6666666666667" Text=" "/><Run Background="White" Foreground="Black" FontSize="12.6666666666667" Text="             "/><Run Background="White" Foreground="Black" FontSize="12.6666666666667" Text="           "/><LineBreak/></TextBlock>
+            <TextBlock Grid.Row="3" TextWrapping="Wrap" Margin="35,27,39,31.8" Foreground="{StaticResource MediumGreyBrush}" FontFamily="Arial" FontSize="18"><Run Background="White" Foreground="Black" FontSize="12.6666666666667" Text="GESTURES THAT CAN BE DETECTED"/><Run Background="White" Foreground="Black" FontSize="12.6666666666667" Text=":"/><LineBreak/><Run Background="White" Foreground="Black" FontSize="12.6666666666667" Text="Point up, Point to the middle, Point down, Scroll up, Scroll down,"/><Run Background="White" Foreground="Black" FontSize="12.6666666666667" Text=" Zoom in and Zoom out. "/><Run Background="White" Foreground="Black" FontSize="12.6666666666667" Text=" "/><Run Background="White" Foreground="Black" FontSize="12.6666666666667" Text="        "/><Run Background="White" Foreground="Black" FontSize="12.6666666666667" Text=" "/><Run Background="White" Foreground="Black" FontSize="12.6666666666667" Text=" "/><Run Background="White" Foreground="Black" FontSize="12.6666666666667" Text="             "/><Run Background="White" Foreground="Black" FontSize="12.6666666666667" Text="           "/><LineBreak/></TextBlock>
 
         </Grid>
 
