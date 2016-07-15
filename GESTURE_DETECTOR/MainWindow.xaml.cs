@@ -1,19 +1,4 @@
-﻿//-----------------------------------------------------------------------------------------------------------------------------
-// <copyright file="MainWindow.xaml.cs" company="Microsoft">
-//     Copyright (c) Microsoft Corporation.  All rights reserved.
-// </copyright>
-//
-// <Description>
-// This program detects a set of discrete and continuous gestures for a single, tracked person.
-// If a person is tracked, the gesture detector will listen for a set of  gestures (ScrollUp, ScrollDown, ZoomIn, ZoomOut, etc.).
-// If any sknown gesture is detected, a specific OSC message unique for each gesture will be sent. 
-// If no person is tracked, the gesture detector will be paused.
-// This program is based on the DiscreteGestureBasics-WPF of the Kinect SDKs C# samples 
-
-// </Description>
-//-------------------------------------------------------------------------------------------------------------------------------
-
-namespace Microsoft.Samples.Kinect.ContinuousGestureBasics
+﻿namespace Microsoft.Samples.Kinect.ContinuousGestureBasics
 {
     using System;
     using System.ComponentModel;
@@ -44,13 +29,13 @@ namespace Microsoft.Samples.Kinect.ContinuousGestureBasics
         private string statusText = null;
 
         /// <summary> KinectBodyView object which handles drawing the active body to a view box in the UI </summary>
-        private KinectBodyView kinectBodyView = null;
+        private KinectSkeletonView kinectBodyView = null;
 
         /// <summary> Gesture detector which will be tied to the active body (closest skeleton to the sensor) </summary>
-        private GestureDetector gestureDetector = null;
+        private GesturesDetector gestureDetector = null;
 
         /// <summary> GestureResultView for displaying gesture results associated with the tracked person in the UI </summary>
-        private GestureResultView gestureResultView = null;
+        private GestureResult gestureResultView = null;
 
    
         /// <summary> Timer for updating Kinect frames and space images at 60 fps </summary>
@@ -77,12 +62,12 @@ namespace Microsoft.Samples.Kinect.ContinuousGestureBasics
             this.bodyFrameReader = this.kinectSensor.BodyFrameSource.OpenReader();
 
             // initialize the BodyViewer object for displaying tracked bodies in the UI
-            this.kinectBodyView = new KinectBodyView(this.kinectSensor);
+            this.kinectBodyView = new KinectSkeletonView(this.kinectSensor);
 
 
             // initialize the GestureDetector object
-            this.gestureResultView = new GestureResultView(false, false, false, false, false, false, false, false, false, false, false, -1.0f, -1.0f);
-            this.gestureDetector = new GestureDetector(this.kinectSensor, this.gestureResultView);
+            this.gestureResultView = new GestureResult(false, false, false, false, false, false, false, false, false, false, false, -1.0f, -1.0f);
+            this.gestureDetector = new GesturesDetector(this.kinectSensor, this.gestureResultView);
 
             // set data context objects for display in UI
             this.DataContext = this;
