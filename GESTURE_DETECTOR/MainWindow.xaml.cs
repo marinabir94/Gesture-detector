@@ -66,7 +66,7 @@
 
 
             // initialize the GestureDetector object
-            this.gestureResultView = new GestureResult(false, false, false, false, false, false, false, false, false, false, false, -1.0f, -1.0f);
+            this.gestureResultView = new GestureResult(false, false, false, false, false, -1.0f, false, false, false, false, false, false, false, false, -1.0f, -1.0f);
             this.gestureDetector = new GesturesDetector(this.kinectSensor, this.gestureResultView);
 
             // set data context objects for display in UI
@@ -271,7 +271,7 @@
                     // the active body is not tracked, pause the detector and update the UI
                     this.gestureDetector.IsPaused = true;
 
-                    this.gestureResultView.UpdateGestureResult(false, false, false, false, -1.0f, false, false, false, -1.0f, false, false, false, false);
+                    this.gestureResultView.UpdateGestureResult(false, false, false, false, false, -1.0f,  -1.0f,  false,  false, -1.0f, false, false, false, false);
                 }
                 else
                 {
