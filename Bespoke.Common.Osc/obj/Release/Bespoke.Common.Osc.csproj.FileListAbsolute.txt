@@ -1,0 +1,5 @@
+C:\Users\Gesture\Desktop\KINECTv2\ContiDiscrGestureBasics\GESTURE_DETECTOR\GESTURE_DETECTOR\Bespoke.Common.Osc\bin\Release\Bespoke.Common.Osc.dll
+C:\Users\Gesture\Desktop\KINECTv2\ContiDiscrGestureBasics\GESTURE_DETECTOR\GESTURE_DETECTOR\Bespoke.Common.Osc\bin\Release\Bespoke.Common.Osc.XML
+C:\Users\Gesture\Desktop\KINECTv2\ContiDiscrGestureBasics\GESTURE_DETECTOR\GESTURE_DETECTOR\Bespoke.Common.Osc\bin\Release\Bespoke.Common.dll
+C:\Users\Gesture\Desktop\KINECTv2\ContiDiscrGestureBasics\GESTURE_DETECTOR\GESTURE_DETECTOR\Bespoke.Common.Osc\obj\Release\Bespoke.Common.Osc.csprojResolveAssemblyReference.cache
+C:\Users\Gesture\Desktop\KINECTv2\ContiDiscrGestureBasics\GESTURE_DETECTOR\GESTURE_DETECTOR\Bespoke.Common.Osc\obj\Release\Bespoke.Common.Osc.dll

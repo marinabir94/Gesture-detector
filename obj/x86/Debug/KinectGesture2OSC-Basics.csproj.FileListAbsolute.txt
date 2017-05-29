@@ -1,0 +1,38 @@
+C:\Users\Gesture\Desktop\KINECTv2\ContiDiscrGestureBasics\GESTURE_DETECTOR\GESTURE_DETECTOR\bin\x86\Debug\ContinuousGestureBasics-WPF.exe.config
+C:\Users\Gesture\Desktop\KINECTv2\ContiDiscrGestureBasics\GESTURE_DETECTOR\GESTURE_DETECTOR\obj\x86\Debug\ContinuousGestureBasics-WPF.exe
+C:\Users\Gesture\Desktop\KINECTv2\ContiDiscrGestureBasics\GESTURE_DETECTOR\GESTURE_DETECTOR\obj\x86\Debug\ContinuousGestureBasics-WPF.pdb
+C:\Users\Gesture\Desktop\KINECTv2\ContiDiscrGestureBasics\GESTURE_DETECTOR\GESTURE_DETECTOR\obj\x86\Debug\KinectGesture2OSC-Basics.csprojResolveAssemblyReference.cache
+C:\Users\Gesture\Desktop\KINECTv2\ContiDiscrGestureBasics\GESTURE_DETECTOR\GESTURE_DETECTOR\obj\x86\Debug\MainWindow.baml
+C:\Users\Gesture\Desktop\KINECTv2\ContiDiscrGestureBasics\GESTURE_DETECTOR\GESTURE_DETECTOR\obj\x86\Debug\MainWindow.g.cs
+C:\Users\Gesture\Desktop\KINECTv2\ContiDiscrGestureBasics\GESTURE_DETECTOR\GESTURE_DETECTOR\obj\x86\Debug\App.g.cs
+C:\Users\Gesture\Desktop\KINECTv2\ContiDiscrGestureBasics\GESTURE_DETECTOR\GESTURE_DETECTOR\obj\x86\Debug\ContinuousGestureBasics-WPF_Content.g.cs
+C:\Users\Gesture\Desktop\KINECTv2\ContiDiscrGestureBasics\GESTURE_DETECTOR\GESTURE_DETECTOR\obj\x86\Debug\ContinuousGestureBasics-WPF_MarkupCompile.cache
+C:\Users\Gesture\Desktop\KINECTv2\ContiDiscrGestureBasics\GESTURE_DETECTOR\GESTURE_DETECTOR\obj\x86\Debug\ContinuousGestureBasics-WPF_MarkupCompile.lref
+C:\Users\Gesture\Desktop\KINECTv2\ContiDiscrGestureBasics\GESTURE_DETECTOR\GESTURE_DETECTOR\obj\x86\Debug\ContinuousGestureBasics-WPF.g.resources
+C:\Users\Gesture\Desktop\KINECTv2\ContiDiscrGestureBasics\GESTURE_DETECTOR\GESTURE_DETECTOR\bin\x86\Debug\ContinuousGestureBasics-WPF.exe
+C:\Users\Gesture\Desktop\KINECTv2\ContiDiscrGestureBasics\GESTURE_DETECTOR\GESTURE_DETECTOR\bin\x86\Debug\ContinuousGestureBasics-WPF.pdb
+C:\Users\Gesture\Desktop\KINECTv2\ContiDiscrGestureBasics\GESTURE_DETECTOR\GESTURE_DETECTOR\bin\x86\Debug\Bespoke.Common.dll
+C:\Users\Gesture\Desktop\KINECTv2\ContiDiscrGestureBasics\GESTURE_DETECTOR\GESTURE_DETECTOR\bin\x86\Debug\Bespoke.Common.Osc.dll
+C:\Users\Gesture\Desktop\KINECTv2\ContiDiscrGestureBasics\GESTURE_DETECTOR\GESTURE_DETECTOR\bin\x86\Debug\Microsoft.Kinect.dll
+C:\Users\Gesture\Desktop\KINECTv2\ContiDiscrGestureBasics\GESTURE_DETECTOR\GESTURE_DETECTOR\bin\x86\Debug\Microsoft.Kinect.VisualGestureBuilder.dll
+C:\Users\Gesture\Desktop\KINECTv2\ContiDiscrGestureBasics\GESTURE_DETECTOR\GESTURE_DETECTOR\bin\x86\Debug\Microsoft.Kinect.xml
+C:\Users\Gesture\Desktop\KINECTv2\ContiDiscrGestureBasics\GESTURE_DETECTOR\GESTURE_DETECTOR\bin\x86\Debug\Microsoft.Kinect.VisualGestureBuilder.xml
+C:\Users\Gesture\Desktop\KINECTv2\ContiDiscrGestureBasics\GESTURE_DETECTOR\GESTURE_DETECTOR\obj\x86\Debug\Microsoft.Samples.Kinect.ContinuousGestureBasics.Properties.Resources.resources
+C:\Users\Gesture\Desktop\KINECTv2\ContiDiscrGestureBasics\GESTURE_DETECTOR\GESTURE_DETECTOR\obj\x86\Debug\KinectGesture2OSC-Basics.csproj.GenerateResource.Cache
+C:\Users\Gesture\Desktop\Kinect bachelorarbeit\Kinect Bachelorarbeit\KinectGesture2OSC\GESTURE_DETECTOR\bin\x86\Debug\ContinuousGestureBasics-WPF.exe.config
+C:\Users\Gesture\Desktop\Kinect bachelorarbeit\Kinect Bachelorarbeit\KinectGesture2OSC\GESTURE_DETECTOR\obj\x86\Debug\ContinuousGestureBasics-WPF.exe
+C:\Users\Gesture\Desktop\Kinect bachelorarbeit\Kinect Bachelorarbeit\KinectGesture2OSC\GESTURE_DETECTOR\obj\x86\Debug\ContinuousGestureBasics-WPF.pdb
+E:\Kinect_12_8\Kinect Bachelorarbeit\KinectGesture2OSC\GESTURE_DETECTOR\bin\x86\Debug\ContinuousGestureBasics-WPF.exe.config
+E:\Kinect_12_8\Kinect Bachelorarbeit\KinectGesture2OSC\GESTURE_DETECTOR\obj\x86\Debug\ContinuousGestureBasics-WPF.exe
+E:\Kinect_12_8\Kinect Bachelorarbeit\KinectGesture2OSC\GESTURE_DETECTOR\obj\x86\Debug\ContinuousGestureBasics-WPF.pdb
+C:\Users\marin\Documents\4º TELECOMUNICACIONES\Hochschule Düsseldorf\Trabajo Final de Grado\Kinect Bachelorarbeit_MarinaBallesterRipoll\KinectGesture2OSC\GESTURE_DETECTOR\bin\x86\Debug\ContinuousGestureBasics-WPF.exe.config
+C:\Users\marin\Documents\4º TELECOMUNICACIONES\Hochschule Düsseldorf\Trabajo Final de Grado\Kinect Bachelorarbeit_MarinaBallesterRipoll\KinectGesture2OSC\GESTURE_DETECTOR\obj\x86\Debug\ContinuousGestureBasics-WPF.exe
+C:\Users\marin\Documents\4º TELECOMUNICACIONES\Hochschule Düsseldorf\Trabajo Final de Grado\Kinect Bachelorarbeit_MarinaBallesterRipoll\KinectGesture2OSC\GESTURE_DETECTOR\obj\x86\Debug\ContinuousGestureBasics-WPF.pdb
+C:\Users\marin\Documents\4º TELECOMUNICACIONES\Hochschule Düsseldorf\Trabajo Final de Grado\Kinect Bachelorarbeit_MarinaBallesterRipoll\KinectGesture2OSC\GESTURE_DETECTOR\obj\x86\Debug\KinectGesture2OSC-Basics.csprojResolveAssemblyReference.cache
+C:\Users\marin\Documents\4º TELECOMUNICACIONES\Hochschule Düsseldorf\Trabajo Final de Grado\Kinect Bachelorarbeit_MarinaBallesterRipoll\KinectGesture2OSC\GESTURE_DETECTOR\obj\x86\Debug\MainWindow.g.cs
+C:\Users\marin\Documents\4º TELECOMUNICACIONES\Hochschule Düsseldorf\Trabajo Final de Grado\Kinect Bachelorarbeit_MarinaBallesterRipoll\KinectGesture2OSC\GESTURE_DETECTOR\obj\x86\Debug\App.g.cs
+C:\Users\marin\Documents\4º TELECOMUNICACIONES\Hochschule Düsseldorf\Trabajo Final de Grado\Kinect Bachelorarbeit_MarinaBallesterRipoll\KinectGesture2OSC\GESTURE_DETECTOR\obj\x86\Debug\ContinuousGestureBasics-WPF_Content.g.cs
+C:\Users\marin\Documents\4º TELECOMUNICACIONES\Hochschule Düsseldorf\Trabajo Final de Grado\Kinect Bachelorarbeit_MarinaBallesterRipoll\KinectGesture2OSC\GESTURE_DETECTOR\obj\x86\Debug\ContinuousGestureBasics-WPF_MarkupCompile.cache
+C:\Users\marin\Documents\4º TELECOMUNICACIONES\Hochschule Düsseldorf\Trabajo Final de Grado\Kinect Bachelorarbeit_MarinaBallesterRipoll\KinectGesture2OSC\GESTURE_DETECTOR\obj\x86\Debug\ContinuousGestureBasics-WPF_MarkupCompile.lref
+C:\Users\marin\Documents\4º TELECOMUNICACIONES\Hochschule Düsseldorf\Trabajo Final de Grado\Kinect Bachelorarbeit_MarinaBallesterRipoll\KinectGesture2OSC\GESTURE_DETECTOR\obj\x86\Debug\MainWindow.baml
+C:\Users\marin\Documents\4º TELECOMUNICACIONES\Hochschule Düsseldorf\Trabajo Final de Grado\Kinect Bachelorarbeit_MarinaBallesterRipoll\KinectGesture2OSC\GESTURE_DETECTOR\obj\x86\Debug\ContinuousGestureBasics-WPF.g.resources

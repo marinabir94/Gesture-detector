@@ -1,0 +1,16 @@
+C:\Users\Gesture\Desktop\KINECTv2\OscFramework_2.0_Mono\Source Code\Framework\Bespoke.Common.Osc\bin\Debug\Bespoke.Common.Osc.dll
+C:\Users\Gesture\Desktop\KINECTv2\OscFramework_2.0_Mono\Source Code\Framework\Bespoke.Common.Osc\bin\Debug\Bespoke.Common.Osc.pdb
+C:\Users\Gesture\Desktop\KINECTv2\OscFramework_2.0_Mono\Source Code\Framework\Bespoke.Common.Osc\bin\Debug\Bespoke.Common.Osc.XML
+C:\Users\Gesture\Desktop\KINECTv2\OscFramework_2.0_Mono\Source Code\Framework\Bespoke.Common.Osc\bin\Debug\Bespoke.Common.dll
+C:\Users\Gesture\Desktop\KINECTv2\OscFramework_2.0_Mono\Source Code\Framework\Bespoke.Common.Osc\bin\Debug\Bespoke.Common.pdb
+C:\Users\Gesture\Desktop\KINECTv2\OscFramework_2.0_Mono\Source Code\Framework\Bespoke.Common.Osc\obj\Debug\Bespoke.Common.Osc.csprojResolveAssemblyReference.cache
+C:\Users\Gesture\Desktop\KINECTv2\OscFramework_2.0_Mono\Source Code\Framework\Bespoke.Common.Osc\obj\Debug\Bespoke.Common.Osc.dll
+C:\Users\Gesture\Desktop\KINECTv2\OscFramework_2.0_Mono\Source Code\Framework\Bespoke.Common.Osc\obj\Debug\Bespoke.Common.Osc.pdb
+C:\Users\Gesture\Desktop\KINECTv2\ContiDiscrGestureBasics\GESTURE_DETECTOR\GESTURE_DETECTOR\Bespoke.Common.Osc\bin\Debug\Bespoke.Common.Osc.dll
+C:\Users\Gesture\Desktop\KINECTv2\ContiDiscrGestureBasics\GESTURE_DETECTOR\GESTURE_DETECTOR\Bespoke.Common.Osc\bin\Debug\Bespoke.Common.Osc.pdb
+C:\Users\Gesture\Desktop\KINECTv2\ContiDiscrGestureBasics\GESTURE_DETECTOR\GESTURE_DETECTOR\Bespoke.Common.Osc\bin\Debug\Bespoke.Common.Osc.XML
+C:\Users\Gesture\Desktop\KINECTv2\ContiDiscrGestureBasics\GESTURE_DETECTOR\GESTURE_DETECTOR\Bespoke.Common.Osc\bin\Debug\Bespoke.Common.dll
+C:\Users\Gesture\Desktop\KINECTv2\ContiDiscrGestureBasics\GESTURE_DETECTOR\GESTURE_DETECTOR\Bespoke.Common.Osc\bin\Debug\Bespoke.Common.pdb
+C:\Users\Gesture\Desktop\KINECTv2\ContiDiscrGestureBasics\GESTURE_DETECTOR\GESTURE_DETECTOR\Bespoke.Common.Osc\obj\Debug\Bespoke.Common.Osc.csprojResolveAssemblyReference.cache
+C:\Users\Gesture\Desktop\KINECTv2\ContiDiscrGestureBasics\GESTURE_DETECTOR\GESTURE_DETECTOR\Bespoke.Common.Osc\obj\Debug\Bespoke.Common.Osc.dll
+C:\Users\Gesture\Desktop\KINECTv2\ContiDiscrGestureBasics\GESTURE_DETECTOR\GESTURE_DETECTOR\Bespoke.Common.Osc\obj\Debug\Bespoke.Common.Osc.pdb

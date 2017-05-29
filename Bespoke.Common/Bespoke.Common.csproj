@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2AF5E7DD-1FF3-45F2-9D7B-EA8FB0395D36}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Bespoke.Common</RootNamespace>
+    <AssemblyName>Bespoke.Common</AssemblyName>
+    <ReleaseVersion>5.0</ReleaseVersion>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>Bespoke.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Drawing" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="Assert.cs" />
+    <Compile Include="CommandLineParser.cs" />
+    <Compile Include="ExceptionEventArgs.cs" />
+    <Compile Include="InputManager.cs" />
+    <Compile Include="Node.cs" />
+    <Compile Include="ObjectRegistry.cs" />
+    <Compile Include="RandomHelper.cs" />
+    <Compile Include="ServiceContainer.cs" />
+    <Compile Include="ServiceManager.cs" />
+    <Compile Include="SubArray.cs" />
+    <Compile Include="Utility.cs" />
+    <Compile Include="LinearAlgebra\Matrix.cs" />
+    <Compile Include="LinearAlgebra\Vector2.cs" />
+    <Compile Include="Net\IPServer.cs" />
+    <Compile Include="Net\TcpConnection.cs" />
+    <Compile Include="Net\TcpConnectionEventArgs.cs" />
+    <Compile Include="Net\TcpDataReceivedEventArgs.cs" />
+    <Compile Include="Net\TcpServer.cs" />
+    <Compile Include="Net\TransmissionType.cs" />
+    <Compile Include="Net\UdpDataReceivedEventArgs.cs" />
+    <Compile Include="Net\UdpServer.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>

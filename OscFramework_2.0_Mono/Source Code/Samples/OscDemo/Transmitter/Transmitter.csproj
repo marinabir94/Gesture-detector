@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{770A76E8-8954-4BBB-8076-EE74260C02D3}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Transmitter</RootNamespace>
+    <AssemblyName>Transmitter</AssemblyName>
+    <ReleaseVersion>5.0</ReleaseVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Externalconsole>true</Externalconsole>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Externalconsole>true</Externalconsole>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="ITransmitter.cs" />
+    <Compile Include="MulticastTransmitter.cs" />
+    <Compile Include="TcpTransmitter.cs" />
+    <Compile Include="UdpTransmitter.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Framework\Bespoke.Common\Bespoke.Common.csproj">
+      <Project>{2AF5E7DD-1FF3-45F2-9D7B-EA8FB0395D36}</Project>
+      <Name>Bespoke.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Framework\Bespoke.Common.Osc\Bespoke.Common.Osc.csproj">
+      <Project>{978F42BC-95F1-4AF4-9FC4-0D49C9119616}</Project>
+      <Name>Bespoke.Common.Osc</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>

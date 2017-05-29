@@ -1,0 +1,2 @@
+C:\Users\Gesture\Desktop\KINECTv2\ContiDiscrGestureBasics\GESTURE_DETECTOR\GESTURE_DETECTOR\Bespoke.Common\bin\Release\Bespoke.Common.dll
+C:\Users\Gesture\Desktop\KINECTv2\ContiDiscrGestureBasics\GESTURE_DETECTOR\GESTURE_DETECTOR\Bespoke.Common\obj\Release\Bespoke.Common.dll
