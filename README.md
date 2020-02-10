@@ -1,2 +1,2 @@
 # ContinuousGestureBasics-WPF
-Demonstrates how to use Continuous Gestures in Kinect for Windows v2
+Demonstrates how to use the "Continuous Gestures" feature in Kinect for Windows v2
